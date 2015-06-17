@@ -4,10 +4,10 @@ module.exports = function () {
         files: [
             'src/**/*.js',
             'test/**/*.js',
-            {pattern: 'test/unit/**/*.test.js', ignore: true},
+            {pattern: 'test/**/*.test.js', ignore: true},
         ],
         tests: [
-            'test/unit/**/*.test.js'
+            'test/**/*.test.js'
         ],
         env: {
             type: 'node',
@@ -17,11 +17,11 @@ module.exports = function () {
             recycle: true
         },
         bootstrap: function (wallaby) {
-            // Note: copied from test/unit/setup.js
+            // ToDo: avoid copy from test/setup.js
             var chai = require('chai');
             global.should = chai.should();  // Note: enable the actual.should.expectation style
             chai.use(require('sinon-chai')); // Note: enable sinon expectations
-            chai.use(require('chai-as-promised')); // Note: enable the eventually expectation
+            // chai.use(require('chai-as-promised')); // Note: enable the eventually expectation
         }
     };
 };
