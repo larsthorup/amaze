@@ -1,0 +1,27 @@
+{
+  "name": "amaze",
+  "author": {
+    "name": "Lars Thorup",
+    "web": "https://github.com/larsthorup"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/larsthorup/mars.git"
+  },
+  "version": "0.1.0",
+  "description": "Maze generation in isomorphic JavaScript",
+  "devDependencies": {
+    "chai": "^2.1.0",
+    "istanbul": "^0.3.0",
+    "jshint": "^2.6.3",
+    "jshint-stylish": "^2.0.0",
+    "mocha": "^2.0.1",
+    "mocha-phantomjs": "^3.5.3",
+    "sinon": "^1.10.3",
+    "sinon-chai": "^2.5.0"
+  },
+  "scripts": {
+    "test": "istanbul cover node_modules/mocha/bin/_mocha -- -R dot --require test/node/setup --recursive test/node"
+  }
+}
