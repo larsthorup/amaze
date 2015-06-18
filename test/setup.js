@@ -7,8 +7,8 @@
 }(function (chai, sinonChai) {
 
     // Chai setup
-    this.should = chai.should();  // Note: enable the actual.should.expectation style
-    chai.use(sinonChai); // Note: enable sinon expectations
+    chai.should();
+    chai.use(sinonChai);
     // chai.use(require('chai-as-promised')); // Note: enable the eventually expectation
 
 }));
