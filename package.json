@@ -11,8 +11,12 @@
   },
   "version": "0.1.0",
   "description": "Maze generation in isomorphic JavaScript",
+  "dependencies": {
+    "requirejs": "^2.1.18"
+  },
   "devDependencies": {
     "chai": "^2.1.0",
+    "es5-shim": "^4.1.7",
     "istanbul": "^0.3.0",
     "jshint": "^2.6.3",
     "jshint-stylish": "^2.0.0",
@@ -24,6 +28,7 @@
   "scripts": {
     "lint": "jshint --verbose --reporter=node_modules/jshint-stylish src test",
     "test-node": "istanbul cover node_modules/mocha/bin/_mocha -- -R dot --require test/setup --recursive test",
+    "test-phantom": "mocha-phantomjs -R dot test/test.html",
     "test": "npm run lint && npm run test-node"
   }
 }
