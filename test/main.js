@@ -6,10 +6,8 @@ if (typeof define === 'function' && define.amd) {
     ];
 
     require.config({
-        // Karma serves files under /base, which is the basePath from your config file
         baseUrl: '../src',
 
-        // ToDo: figure out if we can share the require.config from elsewhere
         paths: {
             'mocha': '../node_modules/mocha/mocha',
             'chai': '../node_modules/chai/chai',
