@@ -3,6 +3,7 @@ if (typeof define === 'function' && define.amd) {
     var initFiles = ['../test/setup'];
     var allTestFiles = [
         '../test/model/cell.test.js',
+        '../test/model/grid.test.js',
     ];
 
     require.config({

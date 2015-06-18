@@ -28,6 +28,7 @@
         if(cell) {
             this._north = cell;
         } else {
+            return this._north;
         }
     };
 
@@ -35,6 +36,7 @@
         if(cell) {
             this._south = cell;
         } else {
+            return this._south;
         }
     };
 
@@ -42,6 +44,7 @@
         if(cell) {
             this._east = cell;
         } else {
+            return this._east;
         }
     };
 
@@ -49,6 +52,7 @@
         if(cell) {
             this._west = cell;
         } else {
+            return this._west;
         }
     };
 
