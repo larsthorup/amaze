@@ -9,6 +9,7 @@ if (typeof define === 'function' && define.amd) {
         baseUrl: '../src',
 
         paths: {
+            'lodash': '../node_modules/lodash/index',
             'mocha': '../node_modules/mocha/mocha',
             'chai': '../node_modules/chai/chai',
             'sinon-chai': '../node_modules/sinon-chai/lib/sinon-chai'

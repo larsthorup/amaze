@@ -12,6 +12,7 @@
   "version": "0.1.0",
   "description": "Maze generation in isomorphic JavaScript",
   "dependencies": {
+    "lodash": "^3.9.3",
     "requirejs": "^2.1.18"
   },
   "devDependencies": {

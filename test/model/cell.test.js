@@ -48,6 +48,25 @@
 
         });
 
+        describe('neighbors', function () {
+
+            it('should return all neighbors', function () {
+                var cell = new Cell(1,1);
+                var cellNorth = new Cell(2,2);
+                var cellSouth = new Cell(3,3);
+                var cellEast = new Cell(4,4);
+                var cellWest = new Cell(5,5);
+                cell.north(cellNorth);
+                cell.south(cellSouth);
+                cell.east(cellEast);
+                cell.west(cellWest);
+                var neighbors = cell.neighbors();
+                neighbors.length.should.equal(4);
+                neighbors.should.include.members([cellNorth, cellSouth, cellEast, cellWest]);
+            });
+
+        });
+
     });
 
 }));
