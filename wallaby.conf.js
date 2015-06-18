@@ -15,6 +15,9 @@ module.exports = function () {
         },
         workers: {
             recycle: true
+        },
+        bootstrap: function (wallaby) {
+            require('./test/setup');
         }
     };
 };
