@@ -61,8 +61,12 @@
         cell.linkTo(this);
     };
 
+    Cell.prototype.id = function () {
+        return this._row + 'x' + this._column;
+    };
+
     Cell.prototype.linkTo = function (cell) {
-        this._links[cell] = true;
+        this._links[cell.id()] = true;
     };
 
     Cell.prototype.unlink = function (cell) {
@@ -71,11 +75,12 @@
     };
 
     Cell.prototype.unlinkFrom = function (cell) {
-        delete this._links[cell];
+        delete this._links[cell.id()];
     };
 
     Cell.prototype.isLinked = function (cell) {
-        return !!this._links[cell];
+        if(!cell) return false;
+        return !!this._links[cell.id()];
     };
 
     Cell.prototype.neighbors = function () {

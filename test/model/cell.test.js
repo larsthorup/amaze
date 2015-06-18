@@ -27,9 +27,13 @@
             it('should add links two way', function () {
                 var cell1 = new Cell(1,1);
                 var cell2 = new Cell(2,2);
+                var cell3 = new Cell(3,3);
                 cell1.link(cell2);
+                cell1.link(cell3);
                 cell1.isLinked(cell2).should.equal(true);
                 cell2.isLinked(cell1).should.equal(true);
+                cell1.isLinked(cell3).should.equal(true);
+                cell2.isLinked(cell3).should.equal(false);
             });
 
         });

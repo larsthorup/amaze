@@ -4,6 +4,7 @@ if (typeof define === 'function' && define.amd) {
     var allTestFiles = [
         '../test/model/cell.test.js',
         '../test/model/grid.test.js',
+        '../test/view/ascii/grid.test.js',
     ];
 
     require.config({

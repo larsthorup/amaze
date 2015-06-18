@@ -17,6 +17,14 @@
         this.placeCells();
     }
 
+    Grid.prototype.columns = function () {
+        return this._columns;
+    };
+
+    Grid.prototype.rows = function () {
+        return this._rows;
+    };
+
     Grid.prototype.createCells = function () {
         return _.range(this._rows).map(function (row) {
             return _.range(this._columns).map(function (column) {
