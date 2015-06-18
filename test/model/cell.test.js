@@ -1,10 +1,14 @@
-(function (factory) {
+(function (depNames, factory) {
     if (typeof define === 'function' && define.amd) {
-        define(['../../src/model/cell'], factory);
+        define(depNames, factory);
     } else if (typeof exports === 'object') {
-        module.exports = factory(require('../../src/model/cell'));
+        var deps = [];
+        for(var i = 0; i < depNames.length; ++i) {
+            deps.push(require(depNames[i]));
+        }
+        module.exports = factory.apply(this, deps);
     }
-}(function (Cell) {
+}(['../../src/model/cell'], function (Cell) {
 
     describe('model/cell', function () {
 
