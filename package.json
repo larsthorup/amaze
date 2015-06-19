@@ -28,7 +28,7 @@
   },
   "scripts": {
     "lint": "jshint --verbose --reporter=node_modules/jshint-stylish src test",
-    "test-node": "istanbul cover node_modules/mocha/bin/_mocha -- -R dot --require test/setup --recursive test",
+    "test-node": "istanbul cover node_modules/mocha/bin/_mocha -- -R dot --require test/chai_setup --recursive test",
     "test-phantom": "mocha-phantomjs -R dot test/index.html",
     "test": "npm run lint && npm run test-node && npm run test-phantom"
   }

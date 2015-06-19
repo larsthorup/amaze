@@ -1,10 +1,11 @@
 if (typeof define === 'function' && define.amd) {
 
-    var initFiles = ['../test/setup'];
+    var initFiles = ['../test/chai_setup'];
     var allTestFiles = [
         '../test/model/cell.test.js',
         '../test/model/grid.test.js',
         '../test/view/ascii/grid.test.js',
+        '../test/algorithm/binaryTree.test.js',
     ];
 
     require.config({
@@ -14,6 +15,7 @@ if (typeof define === 'function' && define.amd) {
             'lodash': '../node_modules/lodash/index',
             'mocha': '../node_modules/mocha/mocha',
             'chai': '../node_modules/chai/chai',
+            'sinon': '../node_modules/sinon/pkg/sinon',
             'sinon-chai': '../node_modules/sinon-chai/lib/sinon-chai'
         },
         shim: {},
