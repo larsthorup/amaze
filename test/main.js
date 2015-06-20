@@ -4,6 +4,7 @@ if (typeof define === 'function' && define.amd) {
     var allTestFiles = [
         '../test/model/cell.test.js',
         '../test/model/grid.test.js',
+        '../test/model/distances.test.js',
         '../test/view/ascii/grid.test.js',
         '../test/algorithm/binaryTree.test.js',
         '../test/algorithm/sideWinder.test.js'
