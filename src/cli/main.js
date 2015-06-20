@@ -3,7 +3,7 @@ var GridView = require('../view/ascii/grid');
 var longest = require('../algorithm/path/longest');
 var _ = require('lodash');
 var algorithms = {};
-_.each(['binaryTree', 'sideWinder', 'aldousBroder'], function (algorithm) {
+_.each(['binaryTree', 'sideWinder', 'aldousBroder', 'recursiveBacktracker'], function (algorithm) {
     algorithms[algorithm] = require('../algorithm/maze/' + algorithm);
 });
 
