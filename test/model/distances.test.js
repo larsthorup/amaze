@@ -22,6 +22,20 @@
 
         });
 
+        describe('max', function () {
+
+            it('should return the cell with the maximum distance', function () {
+                var root = new Cell(0, 0);
+                var distances = new Distances(root);
+                var cell1 = new Cell(1, 1);
+                distances.distance(cell1, 1);
+                var cell2 = new Cell(2, 2);
+                distances.distance(cell2, 2);
+                distances.max().cell.should.equal(cell2);
+            });
+
+        });
+
     });
 
 }));

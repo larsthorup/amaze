@@ -84,9 +84,7 @@
     };
 
     Cell.prototype.links = function () {
-        return _.map(Object.keys(this._links), function (id) {
-            return this._links[id];
-        }.bind(this));
+        return _.values(this._links);
     };
 
     Cell.prototype.neighbors = function () {

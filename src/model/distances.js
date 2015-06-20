@@ -18,10 +18,26 @@
 
     Distances.prototype.distance = function (cell, distance) {
         if(_.isUndefined(distance)) {
-            return this._cells[cell.id()];
+            return _.has(this._cells, cell.id()) ? this._cells[cell.id()].distance : null;
         } else {
-            this._cells[cell.id()] = distance;
+            this._cells[cell.id()] = {
+                cell: cell,
+                distance: distance
+            };
         }
+    };
+
+    Distances.prototype.max = function () {
+        var max = {
+            cell: this._root,
+            distance: 0
+        };
+        _.each(this._cells, function (value) {
+            if(value.distance > max.distance) {
+                max = value;
+            }
+        });
+        return max;
     };
 
     return Distances;
