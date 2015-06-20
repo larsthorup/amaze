@@ -64,6 +64,10 @@
         return this._rows * this._columns;
     };
 
+    Grid.prototype.sample = function () {
+        return this.cell(_.random(this._rows - 1), _.random(this._columns - 1));
+    };
+
     return Grid;
 
 }));
