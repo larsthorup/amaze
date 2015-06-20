@@ -1,8 +1,8 @@
 var Grid = require('../model/grid');
 var GridView = require('../view/ascii/grid');
 var algorithms = {
-    binaryTree: require('../algorithm/binaryTree'),
-    sideWinder: require('../algorithm/sideWinder')
+    binaryTree: require('../algorithm/maze/binaryTree'),
+    sideWinder: require('../algorithm/maze/sideWinder')
 };
 
 function main(options) {

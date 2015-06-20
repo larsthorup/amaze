@@ -6,8 +6,9 @@ if (typeof define === 'function' && define.amd) {
         '../test/model/grid.test.js',
         '../test/model/distances.test.js',
         '../test/view/ascii/grid.test.js',
-        '../test/algorithm/binaryTree.test.js',
-        '../test/algorithm/sideWinder.test.js'
+        '../test/algorithm/maze/binaryTree.test.js',
+        '../test/algorithm/maze/sideWinder.test.js',
+        '../test/algorithm/distance/dijkstra.test.js',
     ];
 
     require.config({

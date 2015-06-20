@@ -66,7 +66,7 @@
     };
 
     Cell.prototype.linkTo = function (cell) {
-        this._links[cell.id()] = true;
+        this._links[cell.id()] = cell;
     };
 
     Cell.prototype.unlink = function (cell) {
@@ -81,6 +81,12 @@
     Cell.prototype.isLinked = function (cell) {
         if(!cell) return false;
         return !!this._links[cell.id()];
+    };
+
+    Cell.prototype.links = function () {
+        return _.map(Object.keys(this._links), function (id) {
+            return this._links[id];
+        }.bind(this));
     };
 
     Cell.prototype.neighbors = function () {

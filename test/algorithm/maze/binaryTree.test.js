@@ -11,12 +11,12 @@
 }([
     'sinon',
     'lodash',
-    '../../src/model/grid',
-    '../../src/algorithm/binaryTree',
-    '../../src/view/ascii/grid'
+    '../../../src/model/grid',
+    '../../../src/algorithm/maze/binaryTree',
+    '../../../src/view/ascii/grid'
 ], function (sinon, _, Grid, binaryTree, GridView) {
 
-    describe('algorithm/binaryTree', function () {
+    describe('algorithm/maze/binaryTree', function () {
 
         beforeEach(function () {
             this.sinon = sinon.sandbox.create();

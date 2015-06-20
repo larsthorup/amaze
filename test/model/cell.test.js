@@ -34,6 +34,10 @@
                 cell2.isLinked(cell1).should.equal(true);
                 cell1.isLinked(cell3).should.equal(true);
                 cell2.isLinked(cell3).should.equal(false);
+                var links = cell1.links();
+                links.length.should.equal(2);
+                links[0].should.equal(cell2);
+                links[1].should.equal(cell3);
             });
 
         });
