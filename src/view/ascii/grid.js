@@ -21,7 +21,7 @@
             var top = '|';
             var bottom = '+';
             _.each(row, function (cell) {
-                var body = '   ';
+                var body = ' ' + (cell.mark() ? 'x' : ' ') + ' ';
                 var eastBoundary = cell.isLinked(cell.east()) ? ' ' : '|';
                 top += body + eastBoundary;
                 var southBoundary = cell.isLinked(cell.south()) ? '   ' : '---';

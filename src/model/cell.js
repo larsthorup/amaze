@@ -14,6 +14,7 @@
         this._row = row;
         this._column = column;
         this._links = {};
+        this._marked = false;
     }
 
     Cell.prototype.row = function () {
@@ -89,6 +90,14 @@
 
     Cell.prototype.neighbors = function () {
         return _.compact([this._north, this._south, this._east, this._west]);
+    };
+
+    Cell.prototype.mark = function (marked) {
+        if(_.isUndefined(marked)) {
+            return this._marked;
+        } else {
+            this._marked = true;
+        }
     };
 
     return Cell;
