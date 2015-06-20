@@ -8,6 +8,7 @@ if (typeof define === 'function' && define.amd) {
         '../test/view/ascii/grid.test.js',
         '../test/algorithm/maze/binaryTree.test.js',
         '../test/algorithm/maze/sideWinder.test.js',
+        '../test/algorithm/maze/aldousBroder.test.js',
         '../test/algorithm/distance/dijkstra.test.js',
         '../test/algorithm/path/longest.test.js',
     ];

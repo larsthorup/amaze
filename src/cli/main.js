@@ -1,10 +1,11 @@
 var Grid = require('../model/grid');
 var GridView = require('../view/ascii/grid');
 var longest = require('../algorithm/path/longest');
-var algorithms = {
-    binaryTree: require('../algorithm/maze/binaryTree'),
-    sideWinder: require('../algorithm/maze/sideWinder')
-};
+var _ = require('lodash');
+var algorithms = {};
+_.each(['binaryTree', 'sideWinder', 'aldousBroder'], function (algorithm) {
+    algorithms[algorithm] = require('../algorithm/maze/' + algorithm);
+});
 
 function main(options) {
     var grid = new Grid(options.rows, options.columns);
