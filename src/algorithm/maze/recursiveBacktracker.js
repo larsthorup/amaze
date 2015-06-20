@@ -14,20 +14,21 @@
         return _.isEmpty(cell.links());
     }
 
-    function recursiveBacktracker(grid) {
-        var start = grid.sample();
-        var stack = [start];
-        while(_.any(stack)) {
-            var current = _.last(stack);
-            var neighbors = _.filter(current.neighbors(), hasNoLinks);
-            if(_.isEmpty(neighbors)) {
-                stack.pop();
-            } else {
+    function backtrack(grid, cell) {
+        do {
+            var neighbors = _.filter(cell.neighbors(), hasNoLinks);
+            if (_.some(neighbors)) {
                 neighbor = _.sample(neighbors);
-                current.link(neighbor);
-                stack.push(neighbor);
+                cell.link(neighbor);
+                backtrack(grid, neighbor);
+            } else {
+                return;
             }
-        }
+        } while(true);
+    }
+
+    function recursiveBacktracker(grid) {
+        backtrack(grid, grid.sample());
     }
 
     return recursiveBacktracker;
