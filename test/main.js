@@ -6,6 +6,7 @@ if (typeof define === 'function' && define.amd) {
         '../test/model/grid.test.js',
         '../test/view/ascii/grid.test.js',
         '../test/algorithm/binaryTree.test.js',
+        '../test/algorithm/sideWinder.test.js'
     ];
 
     require.config({
