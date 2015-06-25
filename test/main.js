@@ -17,21 +17,7 @@ if (typeof define === 'function' && define.amd) {
     '../test/wui/main.test.js'
   ];
 
-  // ToDo: share this with src/main.js
-  require.config({
-    baseUrl: '../src',
-
-    paths: {
-      'lodash': '../node_modules/lodash/index',
-      'vsvg': '../node_modules/vsvg/dist/vsvg'
-    },
-    shim: {
-      'vsvg': {
-        exports: 'vsvg'
-      }
-    }
-  });
-
+  // Note: require.conf.js is already loaded by now
   require.config({
 
     paths: {
