@@ -1,19 +1,9 @@
-var Grid = require('../model/grid');
 var GridView = require('../view/ascii/grid');
-var longest = require('../algorithm/path/longest');
-var _ = require('lodash');
-var algorithms = {};
-_.each(['binaryTree', 'sideWinder', 'aldousBroder', 'recursiveBacktracker'], function (algorithm) {
-  algorithms[algorithm] = require('../algorithm/maze/' + algorithm);
-});
+var Maze = require('../model/maze');
 
 function main (options) {
-  var grid = new Grid(options.rows, options.columns);
-  algorithms[options.algorithm](grid);
-  var path = longest(grid);
-  path.start.mark(true);
-  path.end.mark(true);
-  console.log(new GridView({model: grid}).render());
+  var maze = new Maze(options);
+  console.log(new GridView({model: maze.grid()}).render());
 }
 
 module.exports = {
