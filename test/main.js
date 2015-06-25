@@ -7,25 +7,39 @@ if (typeof define === 'function' && define.amd) {
     '../test/model/grid.test.js',
     '../test/model/distances.test.js',
     '../test/view/ascii/grid.test.js',
+    '../test/view/svg/grid.test.js',
     '../test/algorithm/maze/binaryTree.test.js',
     '../test/algorithm/maze/sideWinder.test.js',
     '../test/algorithm/maze/aldousBroder.test.js',
     '../test/algorithm/maze/recursiveBacktracker.test.js',
     '../test/algorithm/distance/dijkstra.test.js',
-    '../test/algorithm/path/longest.test.js'
+    '../test/algorithm/path/longest.test.js',
+    '../test/wui/main.test.js'
   ];
 
+  // ToDo: share this with src/main.js
   require.config({
     baseUrl: '../src',
 
     paths: {
       'lodash': '../node_modules/lodash/index',
+      'vsvg': '../node_modules/vsvg/dist/vsvg'
+    },
+    shim: {
+      'vsvg': {
+        exports: 'vsvg'
+      }
+    }
+  });
+
+  require.config({
+
+    paths: {
       'mocha': '../node_modules/mocha/mocha',
       'chai': '../node_modules/chai/chai',
       'sinon': '../node_modules/sinon/pkg/sinon',
       'sinon-chai': '../node_modules/sinon-chai/lib/sinon-chai'
     },
-    shim: {},
 
     // dynamically load all test files
     deps: [].concat(initFiles, allTestFiles),
