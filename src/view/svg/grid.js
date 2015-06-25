@@ -12,11 +12,12 @@
 }(['lodash', 'vsvg'], function (_, vsvg) {
 
   function SvgGridView (options) {
-    this._pixelsPerCell = options.pixelsPerCell;
+    this._pixelsPerCell = options.pixelsPerCell || 20;
     this._grid = options.model;
     this._svg = vsvg.svg({
-      width: options.pixelsPerCell * this._grid.columns() + 1,
-      height: options.pixelsPerCell * this._grid.rows() + 1
+      xmlns: 'http://www.w3.org/2000/svg',
+      width: this._pixelsPerCell * this._grid.columns() + 1,
+      height: this._pixelsPerCell * this._grid.rows() + 1
     });
   }
 
@@ -67,7 +68,7 @@
     }));
   };
 
-  SvgGridView.prototype.toHtml = function () {
+  SvgGridView.prototype.source = function () {
     return this._svg.outerHTML;
   };
 

@@ -10,15 +10,15 @@ define([
     var options = {
       rows: 15,
       columns: 15,
-      algorithm: 'recursiveBacktracker'
+      algorithm: 'recursiveBacktracker',
+      view: 'svg'
     };
     var maze = new Maze(options);
     var view = new SvgGridView({
-      model: maze.grid(),
-      pixelsPerCell: 20
+      model: maze.grid()
     });
     view.render();
-    $('#wui')[0].innerHTML = view.toHtml();
+    $('#wui')[0].innerHTML = view.source();
   }
 
   return {

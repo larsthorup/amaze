@@ -11,12 +11,12 @@
   }
 }(['lodash'], function (_) {
 
-  function View (options) {
+  function AsciiGridView (options) {
     this._grid = options.model;
   }
 
-  View.prototype.render = function () {
-    var output = '+' + _.repeat('---+', this._grid.columns()) + '\n';
+  AsciiGridView.prototype.render = function () {
+    this._source = '+' + _.repeat('---+', this._grid.columns()) + '\n';
     var corner = '+';
     this._grid.eachRow(function (row) {
       var top = '|';
@@ -28,12 +28,15 @@
         var southBoundary = cell.isLinked(cell.south()) ? '   ' : '---';
         bottom += southBoundary + corner;
       });
-      output += top + '\n';
-      output += bottom + '\n';
-    });
-    return output;
+      this._source += top + '\n';
+      this._source += bottom + '\n';
+    }.bind(this));
   };
 
-  return View;
+  AsciiGridView.prototype.source = function () {
+    return this._source;
+  };
+
+  return AsciiGridView;
 
 }));

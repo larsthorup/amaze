@@ -21,7 +21,8 @@
       grid.cell(0, 0).mark(true);
       grid.cell(1, 1).mark(true);
       var view = new AsciiGridView({model: grid});
-      var ascii = view.render();
+      view.render();
+      var ascii = view.source();
       ascii.should.equal([
         '+---+---+',
         '| x |   |',

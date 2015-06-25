@@ -1,11 +1,16 @@
+var _ = require('lodash');
 var Maze = require('../model/maze');
-var AsciiGridView = require('../view/ascii/grid');
+var views = {};
+_.each(['ascii', 'svg'], function (viewName) {
+  views[viewName] = require('../view/' + viewName + '/grid');
+});
 
 function main (options) {
   var maze = new Maze(options);
-  var view = new AsciiGridView({model: maze.grid()});
-  var ascii = view.render();
-  console.log(ascii);
+  var View = views[options.view];
+  var view = new View({model: maze.grid()});
+  view.render();
+  console.log(view.source());
 }
 
 module.exports = {
