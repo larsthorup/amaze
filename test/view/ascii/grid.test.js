@@ -9,7 +9,7 @@
     }
     module.exports = factory.apply(this, deps);
   }
-}(['../../../src/model/grid', '../../../src/view/ascii/grid'], function (Grid, GridView) {
+}(['../../../src/model/grid', '../../../src/view/ascii/grid'], function (Grid, AsciiGridView) {
 
   describe('view/ascii/grid', function () {
 
@@ -20,8 +20,9 @@
       grid.cell(0, 0).isLinked(grid.cell(1, 1)).should.equal(false);
       grid.cell(0, 0).mark(true);
       grid.cell(1, 1).mark(true);
-      var view = new GridView({model: grid});
-      view.render().should.equal([
+      var view = new AsciiGridView({model: grid});
+      var ascii = view.render();
+      ascii.should.equal([
         '+---+---+',
         '| x |   |',
         '+   +---+',

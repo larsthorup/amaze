@@ -20,6 +20,10 @@
     });
   }
 
+  SvgGridView.prototype.svg = function () {
+    return this._svg;
+  };
+
   SvgGridView.prototype.render = function () {
     this._grid.eachCell(function (cell) {
       var x1 = cell.column() * this._pixelsPerCell;
