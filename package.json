@@ -28,8 +28,8 @@
   },
   "scripts": {
     "lint": "semistandard --verbose",
-    "test-node": "istanbul --config=test/istanbul.conf.js cover node_modules/mocha/bin/_mocha -- -R dot --require test/chai_setup --recursive test",
-    "test-phantom": "mocha-phantomjs -R dot test/index.html",
+    "test-node": "istanbul --config=test/istanbul.conf.js cover node_modules/mocha/bin/_mocha",
+    "test-phantom": "mocha-phantomjs --reporter dot test/index.html",
     "test": "npm run lint && npm run test-node && npm run test-phantom"
   }
 }
