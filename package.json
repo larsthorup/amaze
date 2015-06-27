@@ -18,6 +18,7 @@
   },
   "devDependencies": {
     "chai": "^2.1.0",
+    "coveralls": "^2.11.2",
     "es5-shim": "^4.1.7",
     "istanbul": "^0.3.0",
     "mocha": "^2.0.1",
@@ -30,6 +31,8 @@
     "lint": "semistandard --verbose",
     "test-node": "istanbul --config=test/istanbul.conf.js cover node_modules/mocha/bin/_mocha",
     "test-phantom": "mocha-phantomjs --reporter dot test/index.html",
-    "test": "npm run lint && npm run test-node && npm run test-phantom"
+    "test": "npm run lint && npm run test-node && npm run test-phantom",
+    "coveralls": "coveralls < output/coverage/lcov.info",
+    "travis": "npm test && npm run coveralls"
   }
 }
