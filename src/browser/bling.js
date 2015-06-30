@@ -1,4 +1,4 @@
-/*eslint-env amd */
+/* eslint-env amd */
 // https://gist.github.com/paulirish/12fb951a8b893a454b32
 
 define([], function () {

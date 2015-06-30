@@ -1,4 +1,4 @@
-/*eslint-env amd, mocha */
+/* eslint-env amd, mocha */
 (function (depNames, factory) {
   if (typeof define === 'function' && define.amd) {
     define(depNames, factory);

@@ -1,4 +1,4 @@
-/*eslint-env amd */
+/* eslint-env amd */
 if (typeof define === 'function' && define.amd) {
 
   var initFiles = ['../test/mocha_setup'];

@@ -1,4 +1,4 @@
-/*eslint-env amd */
+/* eslint-env amd */
 
 // Note: require.conf.js is already loaded by now
 require.config({

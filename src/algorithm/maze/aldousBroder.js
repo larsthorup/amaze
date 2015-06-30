@@ -1,4 +1,4 @@
-/*eslint-env amd */
+/* eslint-env amd */
 (function (depNames, factory) {
   if (typeof define === 'function' && define.amd) {
     define(depNames, factory);

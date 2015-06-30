@@ -1,4 +1,4 @@
-/*eslint-env amd */
+/* eslint-env amd */
 
 define([
   '../browser/bling',

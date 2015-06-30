@@ -1,4 +1,4 @@
-/*eslint-env amd */
+/* eslint-env amd */
 (function (factory) {
   if (typeof define === 'function' && define.amd) {
     define(['chai', 'sinon-chai'], factory);
