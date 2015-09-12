@@ -14,13 +14,18 @@ module.exports = function (config) {
       {pattern: 'node_modules/sinon/pkg/sinon.js', included: false},
       {pattern: 'node_modules/vsvg/dist/vsvg.js', included: false}
     ],
-    exclude: [],
+    customLaunchers: {
+      Chrome_travis_ci: { // http://swizec.com/blog/how-to-run-javascript-tests-in-chrome-on-travis/swizec/6647
+        base: 'Chrome',
+        flags: ['--no-sandbox']
+      }
+    },
     reporters: ['dots'],
     port: 9876,
     colors: true,
     // logLevel: config.LOG_DEBUG,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome']
+    browsers: process.env.TRAVIS ? ['Chrome_travis_ci'] : ['Chrome']
   });
 };
