@@ -36,8 +36,8 @@
     "test-node": "istanbul --config=test/istanbul.conf.js cover node_modules/mocha/bin/_mocha",
     "test-chrome": "karma start --single-run",
     "test-firefox": "karma start --single-run --browsers Firefox",
-    "test": "npm run lint && npm run test-node && npm run test-firefox",
+    "test": "npm run lint && npm run test-node && npm run test-chrome",
     "coveralls": "coveralls < output/coverage/lcov.info",
-    "travis": "npm test && npm run coveralls"
+    "travis": "npm run lint && npm run test-node && npm run test-firefox && npm run coveralls"
   }
 }
