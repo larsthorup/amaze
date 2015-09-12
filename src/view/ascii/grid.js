@@ -10,35 +10,31 @@
     module.exports = factory.apply(this, deps);
   }
 }(['lodash'], function (_) {
-  'use strict';
-
-  class AsciiGridView {
-    constructor (options) {
-      this._grid = options.model;
-    }
-
-    render () {
-      let columnTops = '---+'.repeat(this._grid.columns());
-      this._source = `+${columnTops}\n`;
-      this._grid.eachRow(row => {
-        let top = '|';
-        let bottom = '+';
-        _.each(row, cell => {
-          const cellChar = cell.mark() ? 'x' : ' ';
-          const eastBoundary = cell.isLinked(cell.east()) ? ' ' : '|';
-          const southBoundary = cell.isLinked(cell.south()) ? '   ' : '---';
-          top += ` ${cellChar} ${eastBoundary}`;
-          bottom += `${southBoundary}+`;
-        });
-        this._source += top + '\n';
-        this._source += bottom + '\n';
-      });
-    }
-
-    source () {
-      return this._source;
-    }
+  function AsciiGridView (options) {
+    this._grid = options.model;
   }
+
+  AsciiGridView.prototype.render = function () {
+    var columnTops = _.repeat('---+', this._grid.columns());
+    this._source = `+${columnTops}\n`;
+    this._grid.eachRow(row => {
+      var top = '|';
+      var bottom = '+';
+      _.each(row, cell => {
+        var cellChar = cell.mark() ? 'x' : ' ';
+        var eastBoundary = cell.isLinked(cell.east()) ? ' ' : '|';
+        var southBoundary = cell.isLinked(cell.south()) ? '   ' : '---';
+        top += ` ${cellChar} ${eastBoundary}`;
+        bottom += `${southBoundary}+`;
+      });
+      this._source += top + '\n';
+      this._source += bottom + '\n';
+    });
+  };
+
+  AsciiGridView.prototype.source = function () {
+    return this._source;
+  };
 
   return AsciiGridView;
 }));
