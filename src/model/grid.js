@@ -26,22 +26,22 @@
   };
 
   Grid.prototype.createCells = function () {
-    return _.range(this._rows).map(function (row) {
-      return _.range(this._columns).map(function (column) {
+    return _.range(this._rows).map(row => {
+      return _.range(this._columns).map(column => {
         return new Cell(row, column);
       });
-    }.bind(this));
+    });
   };
 
   Grid.prototype.placeCells = function () {
-    this.eachCell(function (cell) {
+    this.eachCell(cell => {
       var row = cell.row();
       var col = cell.column();
       cell.north(this.cell(row - 1, col));
       cell.south(this.cell(row + 1, col));
       cell.west(this.cell(row, col - 1));
       cell.east(this.cell(row, col + 1));
-    }.bind(this));
+    });
   };
 
   Grid.prototype.cell = function (row, column) {
@@ -55,7 +55,7 @@
   };
 
   Grid.prototype.eachCell = function (next) {
-    this.eachRow(function (row) {
+    this.eachRow(row => {
       _.each(row, next);
     });
   };

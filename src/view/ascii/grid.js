@@ -17,7 +17,7 @@
   AsciiGridView.prototype.render = function () {
     this._source = '+' + _.repeat('---+', this._grid.columns()) + '\n';
     var corner = '+';
-    this._grid.eachRow(function (row) {
+    this._grid.eachRow(row => {
       var top = '|';
       var bottom = '+';
       _.each(row, function (cell) {
@@ -29,7 +29,7 @@
       });
       this._source += top + '\n';
       this._source += bottom + '\n';
-    }.bind(this));
+    });
   };
 
   AsciiGridView.prototype.source = function () {

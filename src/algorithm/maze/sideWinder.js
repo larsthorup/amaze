@@ -13,7 +13,7 @@
   function sideWinder (grid) {
     grid.eachRow(function (row) {
       var run = [];
-      _.each(row, function (cell) {
+      _.each(row, cell => {
         run.push(cell);
         var atEasternBoundary = !_.isObject(cell.east());
         var atNorthernBoundary = !_.isObject(cell.north());

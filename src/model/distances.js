@@ -32,7 +32,7 @@
       cell: this._root,
       distance: 0
     };
-    _.each(this._cells, function (value) {
+    _.each(this._cells, value => {
       if (value.distance > max.distance) {
         max = value;
       }

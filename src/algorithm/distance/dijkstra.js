@@ -15,8 +15,8 @@
 ], function (_, Distances) {
   function expand (distances, frontier) {
     var newFrontier = [];
-    _.each(frontier, function (cell) {
-      _.each(cell.links(), function (linked) {
+    _.each(frontier, cell => {
+      _.each(cell.links(), linked => {
         if (!_.isNumber(distances.distance(linked))) {
           distances.distance(linked, distances.distance(cell) + 1);
           newFrontier.push(linked);

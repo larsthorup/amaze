@@ -25,7 +25,7 @@
   };
 
   SvgGridView.prototype.render = function () {
-    this._grid.eachCell(function (cell) {
+    this._grid.eachCell(cell => {
       var x1 = cell.column() * this._pixelsPerCell;
       var y1 = cell.row() * this._pixelsPerCell;
       var x2 = (cell.column() + 1) * this._pixelsPerCell;
@@ -40,7 +40,7 @@
         var r = 0.3 * this._pixelsPerCell;
         this.drawDot(cx, cy, r);
       }
-    }.bind(this));
+    });
   };
 
   SvgGridView.prototype.drawLine = function (x1, y1, x2, y2) {

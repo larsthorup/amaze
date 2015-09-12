@@ -11,7 +11,7 @@
   }
 }(['lodash'], function (_) {
   function binaryTree (grid) {
-    grid.eachCell(function (cell) {
+    grid.eachCell(cell => {
       var neighbors = [];
       if (cell.north()) neighbors.push(cell.north());
       if (cell.east()) neighbors.push(cell.east());
