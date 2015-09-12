@@ -3,18 +3,18 @@ if (typeof define === 'function' && define.amd) {
 
   var initFiles = ['../test/mocha_setup'];
   var allTestFiles = [
-    '../test/model/cell.test.js',
-    '../test/model/grid.test.js',
-    '../test/model/distances.test.js',
-    '../test/view/ascii/grid.test.js',
-    '../test/view/svg/grid.test.js',
-    '../test/algorithm/maze/binaryTree.test.js',
-    '../test/algorithm/maze/sideWinder.test.js',
-    '../test/algorithm/maze/aldousBroder.test.js',
-    '../test/algorithm/maze/recursiveBacktracker.test.js',
-    '../test/algorithm/distance/dijkstra.test.js',
-    '../test/algorithm/path/longest.test.js',
-    '../test/wui/main.test.js'
+    '../test/model/cell.test',
+    '../test/model/grid.test',
+    '../test/model/distances.test',
+    '../test/view/ascii/grid.test',
+    '../test/view/svg/grid.test',
+    '../test/algorithm/maze/binaryTree.test',
+    '../test/algorithm/maze/sideWinder.test',
+    '../test/algorithm/maze/aldousBroder.test',
+    '../test/algorithm/maze/recursiveBacktracker.test',
+    '../test/algorithm/distance/dijkstra.test',
+    '../test/algorithm/path/longest.test',
+    '../test/wui/main.test'
   ];
 
   // Note: require.conf.js is already loaded by now

@@ -19,10 +19,13 @@
   "devDependencies": {
     "chai": "^3.0.0",
     "coveralls": "^2.11.2",
-    "es5-shim": "^4.1.7",
     "istanbul": "^0.3.0",
+    "karma": "^0.12.31",
+    "karma-chrome-launcher": "^0.1.7",
+    "karma-mocha": "^0.1.3",
+    "karma-requirejs": "^0.2.2",
+    "karma-spec-reporter": "^0.0.20",
     "mocha": "^2.0.1",
-    "mocha-phantomjs": "^3.5.3",
     "semistandard": "^7.0.2",
     "sinon": "^1.10.3",
     "sinon-chai": "^2.5.0"
@@ -30,8 +33,8 @@
   "scripts": {
     "lint": "semistandard --verbose",
     "test-node": "istanbul --config=test/istanbul.conf.js cover node_modules/mocha/bin/_mocha",
-    "test-phantom": "mocha-phantomjs --reporter dot test/index.html",
-    "test": "npm run lint && npm run test-node && npm run test-phantom",
+    "test-chrome": "karma start --single-run",
+    "test": "npm run lint && npm run test-node && npm run test-chrome",
     "coveralls": "coveralls < output/coverage/lcov.info",
     "travis": "npm test && npm run coveralls"
   }
