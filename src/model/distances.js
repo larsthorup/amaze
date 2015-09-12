@@ -10,7 +10,6 @@
     module.exports = factory.apply(this, deps);
   }
 }(['lodash'], function (_) {
-
   function Distances (root) {
     this._root = root;
     this._cells = {};
@@ -42,5 +41,4 @@
   };
 
   return Distances;
-
 }));

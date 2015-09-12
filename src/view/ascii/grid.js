@@ -10,7 +10,6 @@
     module.exports = factory.apply(this, deps);
   }
 }(['lodash'], function (_) {
-
   function AsciiGridView (options) {
     this._grid = options.model;
   }
@@ -38,5 +37,4 @@
   };
 
   return AsciiGridView;
-
 }));

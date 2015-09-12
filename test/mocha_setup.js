@@ -6,10 +6,8 @@
     module.exports = factory(require('chai'), require('sinon-chai'));
   }
 }(function (chai, sinonChai) {
-
   // Chai setup
   chai.should();
   chai.use(sinonChai);
   // chai.use(require('chai-as-promised')); // Note: enable the eventually expectation
-
 }));

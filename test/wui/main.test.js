@@ -6,11 +6,7 @@
     // Note: cannot test DOM-referencing code on Node
   }
 }(['../../src/wui/main'], function (wui) {
-
   describe('main', function () {
-
-    it('render according to options');
-
+    it.skip('render according to options');
   });
-
 }));

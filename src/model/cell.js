@@ -10,7 +10,6 @@
     module.exports = factory.apply(this, deps);
   }
 }(['lodash'], function (_) {
-
   function Cell (row, column) {
     this._row = row;
     this._column = column;
@@ -102,5 +101,4 @@
   };
 
   return Cell;
-
 }));

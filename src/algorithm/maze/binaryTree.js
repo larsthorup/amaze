@@ -10,7 +10,6 @@
     module.exports = factory.apply(this, deps);
   }
 }(['lodash'], function (_) {
-
   function binaryTree (grid) {
     grid.eachCell(function (cell) {
       var neighbors = [];
@@ -26,5 +25,4 @@
   }
 
   return binaryTree;
-
 }));

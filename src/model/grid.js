@@ -10,7 +10,6 @@
     module.exports = factory.apply(this, deps);
   }
 }(['lodash', './cell'], function (_, Cell) {
-
   function Grid (rows, columns) {
     this._rows = rows;
     this._columns = columns;
@@ -70,5 +69,4 @@
   };
 
   return Grid;
-
 }));

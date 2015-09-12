@@ -10,9 +10,7 @@
     module.exports = factory.apply(this, deps);
   }
 }(['../../../src/model/grid', '../../../src/view/ascii/grid'], function (Grid, AsciiGridView) {
-
   describe('view/ascii/grid', function () {
-
     it('should produce a readable ascii representation of the grid', function () {
       var grid = new Grid(2, 2);
       grid.cell(0, 0).link(grid.cell(1, 0));
@@ -32,7 +30,5 @@
         ''
       ].join('\n'));
     });
-
   });
-
 }));

@@ -10,7 +10,6 @@
     module.exports = factory.apply(this, deps);
   }
 }(['lodash'], function (_) {
-
   function aldousBroder (grid) {
     var cell = grid.sample();
     var unvisited = grid.size() - 1;
@@ -25,5 +24,4 @@
   }
 
   return aldousBroder;
-
 }));

@@ -17,9 +17,7 @@
   '../../../src/algorithm/distance/dijkstra',
   '../../../src/view/ascii/grid'
 ], function (sinon, _, Grid, binaryTree, dijkstra, GridView) {
-
   describe('algorithm/distance/dijkstra', function () {
-
     beforeEach(function () {
       this.sinon = sinon.sandbox.create();
     });
@@ -38,8 +36,6 @@
       distances.distance(grid.cell(1, 0)).should.equal(3);
       distances.distance(grid.cell(1, 1)).should.equal(2);
     });
-
   });
-
 }));
 

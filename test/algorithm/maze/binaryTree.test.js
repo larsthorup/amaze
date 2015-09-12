@@ -16,9 +16,7 @@
   '../../../src/algorithm/maze/binaryTree',
   '../../../src/view/ascii/grid'
 ], function (sinon, _, Grid, binaryTree, GridView) {
-
   describe('algorithm/maze/binaryTree', function () {
-
     beforeEach(function () {
       this.sinon = sinon.sandbox.create();
     });
@@ -37,8 +35,6 @@
       grid.cell(1, 1).isLinked(grid.cell(1, 0)).should.equal(true);
       grid.cell(1, 0).isLinked(grid.cell(0, 0)).should.equal(false);
     });
-
   });
-
 }));
 

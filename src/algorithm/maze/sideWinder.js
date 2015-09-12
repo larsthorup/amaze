@@ -10,7 +10,6 @@
     module.exports = factory.apply(this, deps);
   }
 }(['lodash'], function (_) {
-
   function sideWinder (grid) {
     grid.eachRow(function (row) {
       var run = [];
@@ -31,5 +30,4 @@
   }
 
   return sideWinder;
-
 }));

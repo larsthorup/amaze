@@ -17,9 +17,7 @@
   '../../../src/algorithm/path/longest',
   '../../../src/view/ascii/grid'
 ], function (sinon, _, Grid, binaryTree, longest, GridView) {
-
   describe('algorithm/path/longest', function () {
-
     beforeEach(function () {
       this.sinon = sinon.sandbox.create();
     });
@@ -36,8 +34,6 @@
       path.start.should.equal(grid.cell(0, 0));
       path.end.should.equal(grid.cell(1, 0));
     });
-
   });
-
 }));
 

@@ -13,7 +13,6 @@
   'lodash',
   '../distance/dijkstra'
 ], function (_, dijkstra) {
-
   function longest (grid) {
     var sample = grid.sample();
     var distances = dijkstra(sample);
@@ -26,5 +25,4 @@
   }
 
   return longest;
-
 }));

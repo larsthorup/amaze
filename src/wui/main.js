@@ -5,7 +5,6 @@ define([
   '../view/svg/grid',
   '../model/maze'
 ], function ($, SvgGridView, Maze) {
-
   function main () {
     var options = {
       rows: 15,
@@ -24,5 +23,4 @@ define([
   return {
     main: main
   };
-
 });

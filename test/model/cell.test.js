@@ -10,21 +10,16 @@
     module.exports = factory.apply(this, deps);
   }
 }(['../../src/model/cell'], function (Cell) {
-
   describe('model/cell', function () {
-
     describe('constructor', function () {
-
       it('should set row and column', function () {
         var cell = new Cell(2, 5);
         cell.row().should.equal(2);
         cell.column().should.equal(5);
       });
-
     });
 
     describe('link', function () {
-
       it('should add links two way', function () {
         var cell1 = new Cell(1, 1);
         var cell2 = new Cell(2, 2);
@@ -40,11 +35,9 @@
         links[0].should.equal(cell2);
         links[1].should.equal(cell3);
       });
-
     });
 
     describe('unlink', function () {
-
       it('should remove links two way', function () {
         var cell1 = new Cell(1, 1);
         var cell2 = new Cell(2, 2);
@@ -52,13 +45,10 @@
         cell1.unlink(cell2);
         cell1.isLinked(cell2).should.equal(false);
         cell2.isLinked(cell1).should.equal(false);
-
       });
-
     });
 
     describe('neighbors', function () {
-
       it('should return all neighbors', function () {
         var cell = new Cell(1, 1);
         var cellNorth = new Cell(2, 2);
@@ -73,10 +63,7 @@
         neighbors.length.should.equal(4);
         neighbors.should.include.members([cellNorth, cellSouth, cellEast, cellWest]);
       });
-
     });
-
   });
-
 }));
 

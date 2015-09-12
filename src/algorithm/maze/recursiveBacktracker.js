@@ -10,7 +10,6 @@
     module.exports = factory.apply(this, deps);
   }
 }(['lodash'], function (_) {
-
   function hasNoLinks (cell) {
     return _.isEmpty(cell.links());
   }
@@ -33,5 +32,4 @@
   }
 
   return recursiveBacktracker;
-
 }));

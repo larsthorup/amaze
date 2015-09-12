@@ -13,7 +13,6 @@
   'lodash',
   '../../model/distances'
 ], function (_, Distances) {
-
   function expand (distances, frontier) {
     var newFrontier = [];
     _.each(frontier, function (cell) {
@@ -37,5 +36,4 @@
   }
 
   return dijkstra;
-
 }));

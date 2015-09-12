@@ -51,5 +51,4 @@
   };
 
   return Maze;
-
 }));

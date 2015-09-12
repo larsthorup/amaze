@@ -1,6 +1,5 @@
 /* eslint-env amd */
 if (typeof define === 'function' && define.amd) {
-
   var initFiles = ['../test/mocha_setup'];
   var allTestFiles = [
     '../test/model/cell.test',
@@ -19,7 +18,6 @@ if (typeof define === 'function' && define.amd) {
 
   // Note: require.conf.js is already loaded by now
   require.config({
-
     paths: {
       'mocha': '../node_modules/mocha/mocha',
       'chai': '../node_modules/chai/chai',

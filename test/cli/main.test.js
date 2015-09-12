@@ -10,9 +10,7 @@
     module.exports = factory.apply(this, deps);
   }
 }(['sinon', 'lodash', '../../src/cli/main'], function (sinon, _, cli) {
-
   describe('main', function () {
-
     beforeEach(function () {
       this.sinon = sinon.sandbox.create();
     });
@@ -39,7 +37,5 @@
         ''
       ].join('\n'));
     });
-
   });
-
 }));

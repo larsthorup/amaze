@@ -10,7 +10,6 @@
     module.exports = factory.apply(this, deps);
   }
 }(['lodash', 'vsvg'], function (_, vsvg) {
-
   function SvgGridView (options) {
     this._pixelsPerCell = options.pixelsPerCell || 20;
     this._grid = options.model;
@@ -73,5 +72,4 @@
   };
 
   return SvgGridView;
-
 }));

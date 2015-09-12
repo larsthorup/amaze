@@ -16,9 +16,7 @@
   '../../../src/algorithm/maze/recursiveBacktracker',
   '../../../src/view/ascii/grid'
 ], function (sinon, _, Grid, recursiveBacktracker, GridView) {
-
   describe('algorithm/maze/recursiveBacktracker', function () {
-
     beforeEach(function () {
       this.sinon = sinon.sandbox.create();
     });
@@ -45,8 +43,6 @@
       grid.cell(1, 1).isLinked(grid.cell(1, 0)).should.equal(false);
       grid.cell(1, 0).isLinked(grid.cell(0, 0)).should.equal(true);
     });
-
   });
-
 }));
 
