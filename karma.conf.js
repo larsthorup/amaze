@@ -24,7 +24,7 @@ module.exports = function (config) {
     port: 9876,
     colors: true,
     // logLevel: config.LOG_DEBUG,
-    logLevel: config.LOG_INFO,
+    logLevel: config.LOG_WARN,
     autoWatch: true,
     browsers: process.env.TRAVIS ? ['Chrome_travis_ci'] : ['Chrome']
   });

@@ -15,17 +15,17 @@
   }
 
   AsciiGridView.prototype.render = function () {
-    this._source = '+' + _.repeat('---+', this._grid.columns()) + '\n';
-    var corner = '+';
+    var columnTops = _.repeat('---+', this._grid.columns());
+    this._source = `+${columnTops}\n`;
     this._grid.eachRow(row => {
       var top = '|';
       var bottom = '+';
-      _.each(row, function (cell) {
-        var body = ' ' + (cell.mark() ? 'x' : ' ') + ' ';
+      _.each(row, cell => {
+        var cellChar = cell.mark() ? 'x' : ' ';
         var eastBoundary = cell.isLinked(cell.east()) ? ' ' : '|';
-        top += body + eastBoundary;
         var southBoundary = cell.isLinked(cell.south()) ? '   ' : '---';
-        bottom += southBoundary + corner;
+        top += ` ${cellChar} ${eastBoundary}`;
+        bottom += `${southBoundary}+`;
       });
       this._source += top + '\n';
       this._source += bottom + '\n';

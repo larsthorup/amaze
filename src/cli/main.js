@@ -1,8 +1,8 @@
 var _ = require('lodash');
 var Maze = require('../model/maze');
 var views = {};
-_.each(['ascii', 'svg'], function (viewName) {
-  views[viewName] = require('../view/' + viewName + '/grid');
+_.each(['ascii', 'svg'], viewName => {
+  views[viewName] = require(`../view/${viewName}/grid`);
 });
 
 function main (options) {

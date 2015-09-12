@@ -63,7 +63,7 @@
   };
 
   Cell.prototype.id = function () {
-    return this._row + 'x' + this._column;
+    return `${this._row}x${this._column}`;
   };
 
   Cell.prototype.linkTo = function (cell) {
