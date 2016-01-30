@@ -29,7 +29,7 @@
   function dijkstra (cell) {
     var distances = new Distances(cell);
     var frontier = [cell];
-    while (_.any(frontier)) {
+    while (_.some(frontier)) {
       frontier = expand(distances, frontier);
     }
     return distances;
