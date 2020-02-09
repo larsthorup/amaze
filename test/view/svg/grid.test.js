@@ -17,7 +17,7 @@
       grid.cell(1, 0).link(grid.cell(1, 1));
       grid.cell(0, 0).mark(true);
       grid.cell(1, 1).mark(true);
-      var view = new SvgGridView({model: grid, pixelsPerCell: 10});
+      var view = new SvgGridView({ model: grid, pixelsPerCell: 10 });
       view.render();
       var svg = view.svg();
       svg.getAttribute('width').should.equal(21); // 2 * 10 + 1

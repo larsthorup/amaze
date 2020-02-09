@@ -18,7 +18,7 @@
 ], function (sinon, _, Grid, sideWinder, GridView) {
   describe('algorithm/maze/sideWinder', function () {
     beforeEach(function () {
-      this.sinon = sinon.sandbox.create();
+      this.sinon = sinon.createSandbox();
     });
 
     afterEach(function () {
@@ -27,7 +27,7 @@
 
     it('should create a maze', function () {
       this.sinon.stub(_, 'random').returnsArg(0); // To make the algorithm predictable for testing
-      this.sinon.stub(_, 'sample', function (array) {
+      this.sinon.stub(_, 'sample').callsFake(function (array) {
         return array[0];
       });
       var grid = new Grid(2, 2);

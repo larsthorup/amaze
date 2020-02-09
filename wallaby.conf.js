@@ -5,7 +5,7 @@ module.exports = function () {
     files: [
       'src/**/*.js',
       'test/**/*.js',
-      {pattern: 'test/**/*.test.js', ignore: true}
+      { pattern: 'test/**/*.test.js', ignore: true }
     ],
     tests: [
       'test/**/*.test.js'

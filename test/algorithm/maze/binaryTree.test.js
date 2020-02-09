@@ -18,7 +18,7 @@
 ], function (sinon, _, Grid, binaryTree, GridView) {
   describe('algorithm/maze/binaryTree', function () {
     beforeEach(function () {
-      this.sinon = sinon.sandbox.create();
+      this.sinon = sinon.createSandbox();
     });
 
     afterEach(function () {

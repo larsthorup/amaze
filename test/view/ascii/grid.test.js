@@ -18,7 +18,7 @@
       grid.cell(0, 0).isLinked(grid.cell(1, 1)).should.equal(false);
       grid.cell(0, 0).mark(true);
       grid.cell(1, 1).mark(true);
-      var view = new AsciiGridView({model: grid});
+      var view = new AsciiGridView({ model: grid });
       view.render();
       var ascii = view.source();
       ascii.should.equal([

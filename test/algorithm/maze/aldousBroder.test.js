@@ -18,7 +18,7 @@
 ], function (sinon, _, Grid, aldousBroder, GridView) {
   describe('algorithm/maze/aldousBroder', function () {
     beforeEach(function () {
-      this.sinon = sinon.sandbox.create();
+      this.sinon = sinon.createSandbox();
     });
 
     afterEach(function () {
@@ -29,7 +29,7 @@
       // Node: make the algorithm predictable for testing
       this.sinon.stub(_, 'random').returnsArg(0);
       var index = 999;
-      this.sinon.stub(_, 'sample', function (array) {
+      this.sinon.stub(_, 'sample').callsFake(function (array) {
         ++index;
         if (index >= array.length) index = 0;
         return array[index];

@@ -12,7 +12,7 @@
 }(['sinon', 'lodash', '../../src/cli/main'], function (sinon, _, cli) {
   describe('main', function () {
     beforeEach(function () {
-      this.sinon = sinon.sandbox.create();
+      this.sinon = sinon.createSandbox();
     });
 
     afterEach(function () {

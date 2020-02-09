@@ -19,7 +19,7 @@
 ], function (sinon, _, Grid, binaryTree, longest, GridView) {
   describe('algorithm/path/longest', function () {
     beforeEach(function () {
-      this.sinon = sinon.sandbox.create();
+      this.sinon = sinon.createSandbox();
     });
 
     afterEach(function () {

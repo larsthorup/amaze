@@ -8,7 +8,7 @@ _.each(['ascii', 'svg'], viewName => {
 function main (options) {
   var maze = new Maze(options);
   var View = views[options.view];
-  var view = new View({model: maze.grid()});
+  var view = new View({ model: maze.grid() });
   view.render();
   console.log(view.source());
 }
