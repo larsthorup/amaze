@@ -9,7 +9,7 @@
     "type": "git",
     "url": "https://github.com/larsthorup/mars.git"
   },
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Maze generation in isomorphic JavaScript",
   "dependencies": {
     "lodash": "^4.1.0",
