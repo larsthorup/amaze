@@ -16,10 +16,11 @@ jobs:
       - name: Use Chrome
         uses: nanasess/setup-chromedriver@master
       - run: npm ci
-      - name: Use X Windows
+      - name: Run tests
         run: |
           export DISPLAY=:99
           chromedriver --url-base=/wd/hub &
           sudo Xvfb -ac :99 -screen 0 1280x1024x24 & 
           # optional: > /dev/null 2>&1
-      - run: npm run test:ci
+          echo $DISPLAY
+          npm run test:ci
