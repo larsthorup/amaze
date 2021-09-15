@@ -6,14 +6,14 @@ define([
   '../model/maze'
 ], function ($, SvgGridView, Maze) {
   function main () {
-    var options = {
+    const options = {
       rows: 15,
       columns: 15,
       algorithm: 'recursiveBacktracker',
       view: 'svg'
     };
-    var maze = new Maze(options);
-    var view = new SvgGridView({
+    const maze = new Maze(options);
+    const view = new SvgGridView({
       model: maze.grid()
     });
     view.render();

@@ -3,8 +3,8 @@
   if (typeof define === 'function' && define.amd) {
     define(depNames, factory);
   } else if (typeof exports === 'object') {
-    var deps = [];
-    for (var i = 0; i < depNames.length; ++i) {
+    const deps = [];
+    for (let i = 0; i < depNames.length; ++i) {
       deps.push(require(depNames[i]));
     }
     module.exports = factory.apply(this, deps);
@@ -15,15 +15,15 @@
   }
 
   AsciiGridView.prototype.render = function () {
-    var columnTops = _.repeat('---+', this._grid.columns());
+    const columnTops = _.repeat('---+', this._grid.columns());
     this._source = `+${columnTops}\n`;
     this._grid.eachRow(row => {
-      var top = '|';
-      var bottom = '+';
+      let top = '|';
+      let bottom = '+';
       _.each(row, cell => {
-        var cellChar = cell.mark() ? 'x' : ' ';
-        var eastBoundary = cell.isLinked(cell.east()) ? ' ' : '|';
-        var southBoundary = cell.isLinked(cell.south()) ? '   ' : '---';
+        const cellChar = cell.mark() ? 'x' : ' ';
+        const eastBoundary = cell.isLinked(cell.east()) ? ' ' : '|';
+        const southBoundary = cell.isLinked(cell.south()) ? '   ' : '---';
         top += ` ${cellChar} ${eastBoundary}`;
         bottom += `${southBoundary}+`;
       });

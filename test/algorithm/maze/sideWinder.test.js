@@ -3,8 +3,8 @@
   if (typeof define === 'function' && define.amd) {
     define(depNames, factory);
   } else if (typeof exports === 'object') {
-    var deps = [];
-    for (var i = 0; i < depNames.length; ++i) {
+    const deps = [];
+    for (let i = 0; i < depNames.length; ++i) {
       deps.push(require(depNames[i]));
     }
     module.exports = factory.apply(this, deps);
@@ -30,7 +30,7 @@
       this.sinon.stub(_, 'sample').callsFake(function (array) {
         return array[0];
       });
-      var grid = new Grid(2, 2);
+      const grid = new Grid(2, 2);
       sideWinder(grid);
       // console.log(new GridView({model: grid}).render());
       grid.cell(0, 0).isLinked(grid.cell(0, 1)).should.equal(true);

@@ -1,7 +1,7 @@
 /* eslint-env amd */
 if (typeof define === 'function' && define.amd) {
-  var initFiles = ['../test/mocha_setup'];
-  var allTestFiles = [
+  const initFiles = ['../test/mocha_setup'];
+  const allTestFiles = [
     '../test/model/cell.test',
     '../test/model/grid.test',
     '../test/model/distances.test',

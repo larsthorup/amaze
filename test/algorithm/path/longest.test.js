@@ -3,8 +3,8 @@
   if (typeof define === 'function' && define.amd) {
     define(depNames, factory);
   } else if (typeof exports === 'object') {
-    var deps = [];
-    for (var i = 0; i < depNames.length; ++i) {
+    const deps = [];
+    for (let i = 0; i < depNames.length; ++i) {
       deps.push(require(depNames[i]));
     }
     module.exports = factory.apply(this, deps);
@@ -28,9 +28,9 @@
 
     it('mark the end points of the longest path in the maze', function () {
       this.sinon.stub(_, 'random').returnsArg(0); // To make the algorithm predictable for testing
-      var grid = new Grid(2, 2);
+      const grid = new Grid(2, 2);
       binaryTree(grid);
-      var path = longest(grid);
+      const path = longest(grid);
       path.start.should.equal(grid.cell(0, 0));
       path.end.should.equal(grid.cell(1, 0));
     });

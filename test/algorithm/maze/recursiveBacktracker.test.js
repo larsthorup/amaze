@@ -3,8 +3,8 @@
   if (typeof define === 'function' && define.amd) {
     define(depNames, factory);
   } else if (typeof exports === 'object') {
-    var deps = [];
-    for (var i = 0; i < depNames.length; ++i) {
+    const deps = [];
+    for (let i = 0; i < depNames.length; ++i) {
       deps.push(require(depNames[i]));
     }
     module.exports = factory.apply(this, deps);
@@ -28,14 +28,14 @@
     it('should create a maze', function () {
       // Node: make the algorithm predictable for testing
       this.sinon.stub(_, 'random').returnsArg(0);
-      var index = 999;
+      let index = 999;
       this.sinon.stub(_, 'sample').callsFake(function (array) {
         ++index;
         if (index >= array.length) index = 0;
         return array[index];
       });
 
-      var grid = new Grid(2, 2);
+      const grid = new Grid(2, 2);
       recursiveBacktracker(grid);
       // console.log(new GridView({model: grid}).render());
       grid.cell(0, 0).isLinked(grid.cell(0, 1)).should.equal(true);

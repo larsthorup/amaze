@@ -3,8 +3,8 @@
   if (typeof define === 'function' && define.amd) {
     define(depNames, factory);
   } else if (typeof exports === 'object') {
-    var deps = [];
-    for (var i = 0; i < depNames.length; ++i) {
+    const deps = [];
+    for (let i = 0; i < depNames.length; ++i) {
       deps.push(require(depNames[i]));
     }
     module.exports = factory.apply(this, deps);
@@ -26,18 +26,18 @@
 
   SvgGridView.prototype.render = function () {
     this._grid.eachCell(cell => {
-      var x1 = cell.column() * this._pixelsPerCell;
-      var y1 = cell.row() * this._pixelsPerCell;
-      var x2 = (cell.column() + 1) * this._pixelsPerCell;
-      var y2 = (cell.row() + 1) * this._pixelsPerCell;
+      const x1 = cell.column() * this._pixelsPerCell;
+      const y1 = cell.row() * this._pixelsPerCell;
+      const x2 = (cell.column() + 1) * this._pixelsPerCell;
+      const y2 = (cell.row() + 1) * this._pixelsPerCell;
       if (!cell.north()) this.drawLine(x1, y1, x2, y1);
       if (!cell.west()) this.drawLine(x1, y1, x1, y2);
       if (!cell.isLinked(cell.east())) this.drawLine(x2, y1, x2, y2);
       if (!cell.isLinked(cell.south())) this.drawLine(x1, y2, x2, y2);
       if (cell.mark()) {
-        var cx = (cell.column() + 0.5) * this._pixelsPerCell;
-        var cy = (cell.row() + 0.5) * this._pixelsPerCell;
-        var r = 0.3 * this._pixelsPerCell;
+        const cx = (cell.column() + 0.5) * this._pixelsPerCell;
+        const cy = (cell.row() + 0.5) * this._pixelsPerCell;
+        const r = 0.3 * this._pixelsPerCell;
         this.drawDot(cx, cy, r);
       }
     });

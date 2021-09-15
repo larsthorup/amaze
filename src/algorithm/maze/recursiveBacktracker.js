@@ -3,8 +3,8 @@
   if (typeof define === 'function' && define.amd) {
     define(depNames, factory);
   } else if (typeof exports === 'object') {
-    var deps = [];
-    for (var i = 0; i < depNames.length; ++i) {
+    const deps = [];
+    for (let i = 0; i < depNames.length; ++i) {
       deps.push(require(depNames[i]));
     }
     module.exports = factory.apply(this, deps);
@@ -16,9 +16,9 @@
 
   function backtrack (grid, cell) {
     do {
-      var neighbors = _.filter(cell.neighbors(), hasNoLinks);
+      const neighbors = _.filter(cell.neighbors(), hasNoLinks);
       if (_.some(neighbors)) {
-        var neighbor = _.sample(neighbors);
+        const neighbor = _.sample(neighbors);
         cell.link(neighbor);
         backtrack(grid, neighbor);
       } else {

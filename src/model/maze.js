@@ -3,8 +3,8 @@
   if (typeof define === 'function' && define.amd) {
     define(depNames, factory);
   } else if (typeof exports === 'object') {
-    var deps = [];
-    for (var i = 0; i < depNames.length; ++i) {
+    const deps = [];
+    for (let i = 0; i < depNames.length; ++i) {
       deps.push(require(depNames[i]));
     }
     module.exports = factory.apply(this, deps);
@@ -19,14 +19,14 @@
   '../algorithm/maze/aldousBroder',
   '../algorithm/maze/recursiveBacktracker'
 ], function (_, Cell, Grid, longest, binaryTree, sideWinder, aldousBroder, recursiveBacktracker) {
-  var algorithms = {
+  const algorithms = {
     binaryTree: binaryTree,
     sideWinder: sideWinder,
     aldousBroder: aldousBroder,
     recursiveBacktracker: recursiveBacktracker
   };
 
-  var Maze = function (options) {
+  const Maze = function (options) {
     this.createGrid(options);
     this.carveMaze(options);
     this.markPath();
@@ -41,7 +41,7 @@
   };
 
   Maze.prototype.markPath = function () {
-    var path = longest(this._grid);
+    const path = longest(this._grid);
     path.start.mark(true);
     path.end.mark(true);
   };

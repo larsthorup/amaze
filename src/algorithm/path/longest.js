@@ -3,8 +3,8 @@
   if (typeof define === 'function' && define.amd) {
     define(depNames, factory);
   } else if (typeof exports === 'object') {
-    var deps = [];
-    for (var i = 0; i < depNames.length; ++i) {
+    const deps = [];
+    for (let i = 0; i < depNames.length; ++i) {
       deps.push(require(depNames[i]));
     }
     module.exports = factory.apply(this, deps);
@@ -14,9 +14,9 @@
   '../distance/dijkstra'
 ], function (_, dijkstra) {
   function longest (grid) {
-    var sample = grid.sample();
-    var distances = dijkstra(sample);
-    var path = {
+    const sample = grid.sample();
+    let distances = dijkstra(sample);
+    const path = {
       start: distances.max().cell
     };
     distances = dijkstra(path.start);

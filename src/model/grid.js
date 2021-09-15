@@ -3,8 +3,8 @@
   if (typeof define === 'function' && define.amd) {
     define(depNames, factory);
   } else if (typeof exports === 'object') {
-    var deps = [];
-    for (var i = 0; i < depNames.length; ++i) {
+    const deps = [];
+    for (let i = 0; i < depNames.length; ++i) {
       deps.push(require(depNames[i]));
     }
     module.exports = factory.apply(this, deps);
@@ -35,8 +35,8 @@
 
   Grid.prototype.placeCells = function () {
     this.eachCell(cell => {
-      var row = cell.row();
-      var col = cell.column();
+      const row = cell.row();
+      const col = cell.column();
       cell.north(this.cell(row - 1, col));
       cell.south(this.cell(row + 1, col));
       cell.west(this.cell(row, col - 1));
