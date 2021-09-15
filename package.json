@@ -34,11 +34,11 @@
   "scripts": {
     "lint": "semistandard --verbose",
     "start": "node src/index",
-    "test-node": "nyc --nycrc-path=test/nyc.conf.js  node_modules/mocha/bin/_mocha",
-    "test-chrome": "karma start --single-run",
-    "test-firefox": "karma start --single-run --browsers Firefox",
-    "test": "npm run lint && npm run test-node && npm run test-firefox",
+    "test:node": "nyc --nycrc-path=test/nyc.conf.js  node_modules/mocha/bin/_mocha",
+    "test:chrome": "karma start --single-run",
+    "test:firefox": "karma start --single-run --browsers Firefox",
+    "test": "npm run lint && npm run test:node && npm run test:chrome",
     "coveralls": "coveralls < output/coverage/lcov.info",
-    "travis": "npm test && npm run coveralls"
+    "test:ci": "npm test && npm run coveralls"
   }
 }
