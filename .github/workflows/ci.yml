@@ -21,6 +21,9 @@ jobs:
           export DISPLAY=:99
           chromedriver --url-base=/wd/hub &
           sudo Xvfb -ac :99 -screen 0 1280x1024x24 & 
-          # optional: > /dev/null 2>&1
-          echo $DISPLAY
-          npm run test:ci
+          npm test
+      - name: Report coverage
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path-to-lcov: output/coverage/lcov.info
