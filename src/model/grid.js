@@ -9,7 +9,7 @@
     }
     module.exports = factory.apply(this, deps);
   }
-}(['lodash', './cell'], function (_, Cell) {
+}(['../lib/util', './cell'], function (_, Cell) {
   function Grid (rows, columns) {
     this._rows = rows;
     this._columns = columns;
@@ -51,12 +51,12 @@
   };
 
   Grid.prototype.eachRow = function (next) {
-    _.each(this._cells, next);
+    this._cells.forEach(next);
   };
 
   Grid.prototype.eachCell = function (next) {
     this.eachRow(row => {
-      _.each(row, next);
+      row.forEach(next);
     });
   };
 

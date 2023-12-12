@@ -9,7 +9,7 @@
     }
     module.exports = factory.apply(this, deps);
   }
-}(['lodash'], function (_) {
+}([], function () {
   function Cell (row, column) {
     this._row = row;
     this._column = column;
@@ -85,15 +85,15 @@
   };
 
   Cell.prototype.links = function () {
-    return _.values(this._links);
+    return Object.values(this._links);
   };
 
   Cell.prototype.neighbors = function () {
-    return _.compact([this._north, this._south, this._east, this._west]);
+    return [this._north, this._south, this._east, this._west].filter((cell) => cell);
   };
 
   Cell.prototype.mark = function (marked) {
-    if (_.isUndefined(marked)) {
+    if (marked === undefined) {
       return this._marked;
     } else {
       this._marked = true;

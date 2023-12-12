@@ -9,18 +9,18 @@
     }
     module.exports = factory.apply(this, deps);
   }
-}(['lodash'], function (_) {
+}([], function () {
   function AsciiGridView (options) {
     this._grid = options.model;
   }
 
   AsciiGridView.prototype.render = function () {
-    const columnTops = _.repeat('---+', this._grid.columns());
+    const columnTops = '---+'.repeat(this._grid.columns());
     this._source = `+${columnTops}\n`;
     this._grid.eachRow(row => {
       let top = '|';
       let bottom = '+';
-      _.each(row, cell => {
+      row.forEach(cell => {
         const cellChar = cell.mark() ? 'x' : ' ';
         const eastBoundary = cell.isLinked(cell.east()) ? ' ' : '|';
         const southBoundary = cell.isLinked(cell.south()) ? '   ' : '---';

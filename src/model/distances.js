@@ -9,7 +9,7 @@
     }
     module.exports = factory.apply(this, deps);
   }
-}(['lodash'], function (_) {
+}([], function () {
   function Distances (root) {
     this._root = root;
     this._cells = {};
@@ -17,8 +17,8 @@
   }
 
   Distances.prototype.distance = function (cell, distance) {
-    if (_.isUndefined(distance)) {
-      return _.has(this._cells, cell.id()) ? this._cells[cell.id()].distance : null;
+    if (distance === undefined) {
+      return cell.id() in this._cells ? this._cells[cell.id()].distance : null;
     } else {
       this._cells[cell.id()] = {
         cell: cell,
@@ -32,7 +32,7 @@
       cell: this._root,
       distance: 0
     };
-    _.each(this._cells, value => {
+    Object.values(this._cells).forEach(value => {
       if (value.distance > max.distance) {
         max = value;
       }

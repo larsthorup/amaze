@@ -9,7 +9,7 @@
     }
     module.exports = factory.apply(this, deps);
   }
-}(['sinon', 'lodash', '../../src/cli/main'], function (sinon, _, cli) {
+}(['sinon', '../../src/lib/util', '../../src/cli/main'], function (sinon, _, cli) {
   describe('main', function () {
     beforeEach(function () {
       this.sinon = sinon.createSandbox();

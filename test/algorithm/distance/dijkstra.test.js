@@ -11,7 +11,7 @@
   }
 }([
   'sinon',
-  'lodash',
+  '../../../src/lib/util',
   '../../../src/model/grid',
   '../../../src/algorithm/maze/binaryTree',
   '../../../src/algorithm/distance/dijkstra',

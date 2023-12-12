@@ -9,13 +9,13 @@
     }
     module.exports = factory.apply(this, deps);
   }
-}(['lodash'], function (_) {
+}(['../../lib/util'], function (_) {
   function aldousBroder (grid) {
     let cell = grid.sample();
     let unvisited = grid.size() - 1;
     while (unvisited > 0) {
       const neighbor = _.sample(cell.neighbors());
-      if (_.isEmpty(neighbor.links())) {
+      if (neighbor.links().length === 0) {
         cell.link(neighbor);
         --unvisited;
       }

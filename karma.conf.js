@@ -9,7 +9,6 @@ module.exports = function (config) {
       { pattern: 'src/**/*.js', included: false },
       { pattern: 'test/**/*.js', included: false },
       { pattern: 'node_modules/chai/chai.js', included: false },
-      { pattern: 'node_modules/lodash/lodash.js', included: false },
       { pattern: 'node_modules/sinon-chai/lib/sinon-chai.js', included: false },
       { pattern: 'node_modules/sinon/pkg/sinon.js', included: false },
       { pattern: 'node_modules/vsvg/dist/vsvg.js', included: false }

@@ -10,9 +10,8 @@
     module.exports = factory.apply(this, deps);
   }
 }([
-  'lodash',
   '../distance/dijkstra'
-], function (_, dijkstra) {
+], function (dijkstra) {
   function longest (grid) {
     const sample = grid.sample();
     let distances = dijkstra(sample);

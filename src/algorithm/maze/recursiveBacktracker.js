@@ -9,15 +9,15 @@
     }
     module.exports = factory.apply(this, deps);
   }
-}(['lodash'], function (_) {
+}(['../../lib/util'], function (_) {
   function hasNoLinks (cell) {
-    return _.isEmpty(cell.links());
+    return cell.links().length === 0;
   }
 
   function backtrack (grid, cell) {
     do {
-      const neighbors = _.filter(cell.neighbors(), hasNoLinks);
-      if (_.some(neighbors)) {
+      const neighbors = cell.neighbors().filter(hasNoLinks);
+      if (neighbors.some((cell) => Boolean(cell))) {
         const neighbor = _.sample(neighbors);
         cell.link(neighbor);
         backtrack(grid, neighbor);

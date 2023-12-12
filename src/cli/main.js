@@ -1,7 +1,6 @@
-const _ = require('lodash');
 const Maze = require('../model/maze');
 const views = {};
-_.each(['ascii', 'svg'], viewName => {
+['ascii', 'svg'].forEach(viewName => {
   views[viewName] = require(`../view/${viewName}/grid`);
 });
 

@@ -9,7 +9,7 @@
     }
     module.exports = factory.apply(this, deps);
   }
-}(['lodash'], function (_) {
+}(['../../lib/util'], function (_) {
   function binaryTree (grid) {
     grid.eachCell(cell => {
       const neighbors = [];

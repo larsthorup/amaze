@@ -6,11 +6,22 @@
 [![devDependency Status](https://david-dm.org/larsthorup/amaze/dev-status.png)](https://david-dm.org/larsthorup/amaze#info=devDependencies)
 [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg?style=flat-square)](https://github.com/Flet/semistandard)
 
+
+TODO:
+
+- JSDoc typing
+- inline vsvg
+- upgrade to ES6 modules
+- isomorphic ES6 module mocking? (_.random, _.sample, console.log)
+- upgrade to Vitest / vitest-browser
+
+
 Maze generation in isomorphic JavaScript
 
     npm install
     npm test
     npm start
+    open src/index.html || start src/index.html
 
 Sample output:
 

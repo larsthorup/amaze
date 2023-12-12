@@ -12,7 +12,6 @@
   "version": "0.1.1",
   "description": "Maze generation in isomorphic JavaScript",
   "dependencies": {
-    "lodash": "^4.17.19",
     "requirejs": "^2.1.18",
     "vsvg": "^1.9.1"
   },
@@ -32,6 +31,7 @@
   },
   "scripts": {
     "lint": "semistandard --verbose",
+    "mocha": "mocha",
     "start": "node src/index",
     "test:node": "nyc --nycrc-path=test/nyc.conf.js  node_modules/mocha/bin/_mocha",
     "test:chrome": "karma start --single-run",

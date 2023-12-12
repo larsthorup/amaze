@@ -10,14 +10,13 @@
     module.exports = factory.apply(this, deps);
   }
 }([
-  'lodash',
   '../../model/distances'
-], function (_, Distances) {
+], function (Distances) {
   function expand (distances, frontier) {
     const newFrontier = [];
-    _.each(frontier, cell => {
-      _.each(cell.links(), linked => {
-        if (!_.isNumber(distances.distance(linked))) {
+    frontier.forEach(cell => {
+      cell.links().forEach(linked => {
+        if (typeof distances.distance(linked) !== 'number') {
           distances.distance(linked, distances.distance(cell) + 1);
           newFrontier.push(linked);
         }
@@ -29,7 +28,7 @@
   function dijkstra (cell) {
     const distances = new Distances(cell);
     let frontier = [cell];
-    while (_.some(frontier)) {
+    while (frontier.some(cell => Boolean(cell))) {
       frontier = expand(distances, frontier);
     }
     return distances;

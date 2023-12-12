@@ -10,7 +10,6 @@
     module.exports = factory.apply(this, deps);
   }
 }([
-  'lodash',
   './cell',
   '../model/grid',
   '../algorithm/path/longest',
@@ -18,7 +17,7 @@
   '../algorithm/maze/sideWinder',
   '../algorithm/maze/aldousBroder',
   '../algorithm/maze/recursiveBacktracker'
-], function (_, Cell, Grid, longest, binaryTree, sideWinder, aldousBroder, recursiveBacktracker) {
+], function (Cell, Grid, longest, binaryTree, sideWinder, aldousBroder, recursiveBacktracker) {
   const algorithms = {
     binaryTree: binaryTree,
     sideWinder: sideWinder,
