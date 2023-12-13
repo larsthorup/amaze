@@ -19,10 +19,10 @@
   '../algorithm/maze/recursiveBacktracker'
 ], function (Cell, Grid, longest, binaryTree, sideWinder, aldousBroder, recursiveBacktracker) {
   const algorithms = {
-    binaryTree: binaryTree,
-    sideWinder: sideWinder,
-    aldousBroder: aldousBroder,
-    recursiveBacktracker: recursiveBacktracker
+    binaryTree,
+    sideWinder,
+    aldousBroder,
+    recursiveBacktracker
   };
 
   const Maze = function (options) {

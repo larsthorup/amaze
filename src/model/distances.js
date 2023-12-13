@@ -20,10 +20,7 @@
     if (distance === undefined) {
       return cell.id() in this._cells ? this._cells[cell.id()].distance : null;
     } else {
-      this._cells[cell.id()] = {
-        cell: cell,
-        distance: distance
-      };
+      this._cells[cell.id()] = { cell, distance };
     }
   };
 

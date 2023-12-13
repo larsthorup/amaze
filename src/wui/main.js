@@ -21,6 +21,6 @@ define([
   }
 
   return {
-    main: main
+    main
   };
 });

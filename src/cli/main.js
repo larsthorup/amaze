@@ -13,5 +13,5 @@ function main (options) {
 }
 
 module.exports = {
-  main: main
+  main
 };

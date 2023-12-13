@@ -45,10 +45,10 @@
 
   SvgGridView.prototype.drawLine = function (x1, y1, x2, y2) {
     this._svg.appendChild(vsvg.line({
-      x1: x1,
-      y1: y1,
-      x2: x2,
-      y2: y2,
+      x1,
+      y1,
+      x2,
+      y2,
       style: {
         stroke: 'black'
       }
@@ -57,9 +57,9 @@
 
   SvgGridView.prototype.drawDot = function (cx, cy, r) {
     this._svg.appendChild(vsvg.circle({
-      cx: cx,
-      cy: cy,
-      r: r,
+      cx,
+      cy,
+      r,
       style: {
         stroke: 'black',
         fill: 'black'
