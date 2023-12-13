@@ -12,6 +12,9 @@
   "version": "0.1.1",
   "description": "Maze generation in isomorphic JavaScript",
   "dependencies": {
+    "chrome-launcher": "^1.1.0",
+    "http-server": "^14.1.1",
+    "puppeteer-core": "^21.6.0",
     "requirejs": "^2.1.18",
     "vsvg": "^1.9.1"
   },
@@ -27,7 +30,8 @@
     "lint": "semistandard --verbose",
     "mocha": "mocha",
     "start": "node src/index",
-    "test:node": "nyc --nycrc-path=test/nyc.conf.js  node_modules/mocha/bin/_mocha",
-    "test": "npm run lint && npm run test:node"
+    "test:node": "nyc --nycrc-path=test/nyc.conf.js node_modules/mocha/bin/_mocha",
+    "test:browser": "node dev/puppeteer-runner.mjs",
+    "test": "npm run lint && npm run test:node && npm run test:browser"
   }
 }

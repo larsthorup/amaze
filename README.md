@@ -9,7 +9,6 @@
 
 TODO:
 
-- upgrade to Vitest / vitest-browser
 - inline vsvg
 - upgrade to ES6 modules
 - isomorphic ES6 module mocking? (_.random, _.sample, console.log)

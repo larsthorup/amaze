@@ -30,11 +30,7 @@ if (typeof define === 'function' && define.amd) {
 
     // we have to kickoff mocha, as it is asynchronous
     callback: function () {
-      if (window.mochaPhantomJS) {
-        window.mochaPhantomJS.run();
-      } else {
-        window.mocha.run();
-      }
+      window.mocha.run((failures) => { window.__mocha_failures__ = failures; });
     }
   });
 }
