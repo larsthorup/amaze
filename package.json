@@ -17,13 +17,7 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "karma": "^6.3.2",
-    "karma-chrome-launcher": "^3.1.0",
-    "karma-firefox-launcher": "^2.1.0",
-    "karma-mocha": "^2.0.1",
-    "karma-requirejs": "^1.0.0",
-    "karma-spec-reporter": "^0.0.36",
-    "mocha": "^7.2.0",
+    "mocha": "^10.2.0",
     "nyc": "^15.0.0",
     "semistandard": "^17.0.0",
     "sinon": "^17.0.1",
@@ -34,8 +28,6 @@
     "mocha": "mocha",
     "start": "node src/index",
     "test:node": "nyc --nycrc-path=test/nyc.conf.js  node_modules/mocha/bin/_mocha",
-    "test:chrome": "karma start --single-run",
-    "test:firefox": "karma start --single-run --browsers Firefox",
-    "test": "npm run lint && npm run test:node && npm run test:chrome"
+    "test": "npm run lint && npm run test:node"
   }
 }

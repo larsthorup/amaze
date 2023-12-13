@@ -9,10 +9,10 @@
 
 TODO:
 
+- upgrade to Vitest / vitest-browser
 - inline vsvg
 - upgrade to ES6 modules
 - isomorphic ES6 module mocking? (_.random, _.sample, console.log)
-- upgrade to Vitest / vitest-browser
 - JSDoc typing
 
 
@@ -21,6 +21,7 @@ Maze generation in isomorphic JavaScript
     npm install
     npm test
     npm start
+    open test/index.html || start test/index.html
     open src/index.html || start src/index.html
 
 Sample output:

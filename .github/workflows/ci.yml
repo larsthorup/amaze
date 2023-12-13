@@ -15,7 +15,7 @@ jobs:
           node-version: "18"
       - name: Use Chrome
         uses: nanasess/setup-chromedriver@master
-      - run: npm ci --verbose
+      - run: npm ci
       - name: Run tests
         run: |
           export DISPLAY=:99
