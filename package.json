@@ -23,7 +23,7 @@
     "karma-mocha": "^2.0.1",
     "karma-requirejs": "^1.0.0",
     "karma-spec-reporter": "^0.0.33",
-    "mocha": "^7.2.0",
+    "mocha": "^10.2.0",
     "nyc": "^15.0.0",
     "semistandard": "^16.0.1",
     "sinon": "^13.0.1",
