@@ -9,11 +9,11 @@
 
 TODO:
 
-- JSDoc typing
 - inline vsvg
 - upgrade to ES6 modules
 - isomorphic ES6 module mocking? (_.random, _.sample, console.log)
 - upgrade to Vitest / vitest-browser
+- JSDoc typing
 
 
 Maze generation in isomorphic JavaScript
