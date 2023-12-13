@@ -7,23 +7,25 @@
 [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg?style=flat-square)](https://github.com/Flet/semistandard)
 
 
-TODO:
+Maze generation in isomorphic JavaScript
 
+## TODO
+
+- switch from requirejs to ES6 modules
 - inline vsvg
-- upgrade to ES6 modules
 - isomorphic ES6 module mocking? (_.random, _.sample, console.log)
 - JSDoc typing
 
-
-Maze generation in isomorphic JavaScript
+## Getting Started
 
     npm install
     npm test
     npm start
-    open test/index.html || start test/index.html
     open src/index.html || start src/index.html
 
-Sample output:
+## Sample output
+
+![Maze](./amaze.png)
 
 ```
 +---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
