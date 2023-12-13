@@ -20,8 +20,8 @@
       const view = new SvgGridView({ model: grid, pixelsPerCell: 10 });
       view.render();
       const svg = view.svg();
-      svg.getAttribute('width').should.equal(21); // 2 * 10 + 1
-      svg.getAttribute('height').should.equal(21); // 2 * 10 + 1
+      svg.width.should.equal(21); // 2 * 10 + 1
+      svg.height.should.equal(21); // 2 * 10 + 1
       svg.children.length.should.equal(12); // 12 (lines for a full 2x2 matrix) - 2 (links) + 2 (dots)
     });
   });

@@ -9,15 +9,15 @@
     }
     module.exports = factory.apply(this, deps);
   }
-}(['vsvg'], function (vsvg) {
+}([], function () {
   function SvgGridView (options) {
     this._pixelsPerCell = options.pixelsPerCell || 20;
     this._grid = options.model;
-    this._svg = vsvg.svg({
-      xmlns: 'http://www.w3.org/2000/svg',
+    this._svg = {
       width: this._pixelsPerCell * this._grid.columns() + 1,
-      height: this._pixelsPerCell * this._grid.rows() + 1
-    });
+      height: this._pixelsPerCell * this._grid.rows() + 1,
+      children: []
+    };
   }
 
   SvgGridView.prototype.svg = function () {
@@ -44,31 +44,15 @@
   };
 
   SvgGridView.prototype.drawLine = function (x1, y1, x2, y2) {
-    this._svg.appendChild(vsvg.line({
-      x1,
-      y1,
-      x2,
-      y2,
-      style: {
-        stroke: 'black'
-      }
-    }));
+    this._svg.children.push(`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" style="stroke: black" />`);
   };
 
   SvgGridView.prototype.drawDot = function (cx, cy, r) {
-    this._svg.appendChild(vsvg.circle({
-      cx,
-      cy,
-      r,
-      style: {
-        stroke: 'black',
-        fill: 'black'
-      }
-    }));
+    this._svg.children.push(`<circle cx="${cx}" cy="${cy}" r="${r}" style="stroke: black; fill: black" />`);
   };
 
   SvgGridView.prototype.source = function () {
-    return this._svg.outerHTML;
+    return `<svg width=${this._svg.width} height=${this._svg.height}>${this._svg.children.join('')}</svg>`;
   };
 
   return SvgGridView;

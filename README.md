@@ -12,7 +12,6 @@ Maze generation in isomorphic JavaScript
 ## TODO
 
 - switch from requirejs to ES6 modules
-- inline vsvg
 - isomorphic ES6 module mocking? (_.random, _.sample, console.log)
 - JSDoc typing
 
