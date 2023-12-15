@@ -27,7 +27,7 @@
 
     it('should create a maze', function () {
       // Node: make the algorithm predictable for testing
-      this.sinon.stub(_, 'random').returnsArg(0);
+      this.sinon.stub(_, 'random').callsFake((limit) => limit - 1); // To make the algorithm predictable for testing
       let index = 999;
       this.sinon.stub(_, 'sample').callsFake(function (array) {
         ++index;

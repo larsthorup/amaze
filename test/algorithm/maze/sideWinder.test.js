@@ -26,7 +26,7 @@
     });
 
     it('should create a maze', function () {
-      this.sinon.stub(_, 'random').returnsArg(0); // To make the algorithm predictable for testing
+      this.sinon.stub(_, 'random').callsFake((limit) => limit - 1); // To make the algorithm predictable for testing
       this.sinon.stub(_, 'sample').callsFake(function (array) {
         return array[0];
       });

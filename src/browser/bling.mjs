@@ -1,9 +1,8 @@
-/* eslint-env amd */
 // https://gist.github.com/paulirish/12fb951a8b893a454b32
-define([], function () {
-  const $ = document.querySelectorAll.bind(document);
-  return $;
-});
+export default function (selector) {
+  return document.querySelectorAll(selector);
+}
+
 // Node.prototype.on = window.on = function (name, fn) {
 //   this.addEventListener(name, fn);
 // };

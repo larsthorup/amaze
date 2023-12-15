@@ -1,9 +1,10 @@
 import { Maze } from '../model/maze.mjs';
 import { AsciiGridView } from '../view/ascii/grid.mjs';
+import { SvgGridView } from '../view/svg/grid.mjs';
 
 const views = {
-  ascii: AsciiGridView
-  // svg: SvgGridView
+  ascii: AsciiGridView,
+  svg: SvgGridView
 };
 
 function main (options) {

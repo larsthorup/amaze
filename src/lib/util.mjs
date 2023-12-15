@@ -8,12 +8,14 @@ function range (length) {
   return [...Array(length).keys()];
 }
 function sample (list) {
-  return list[random(list.length)];
+  return list[util.random(list.length)];
 }
 
-export default {
+const util = {
   inRange,
   random,
   range,
   sample
 };
+
+export default util;
