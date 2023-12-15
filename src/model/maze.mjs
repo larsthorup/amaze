@@ -1,3 +1,4 @@
+import { Grid } from './grid.mjs';
 
 // /* eslint-env amd */
 // (function (depNames, factory) {
@@ -26,29 +27,26 @@
 //     recursiveBacktracker
 //   };
 
-//   const Maze = function (options) {
-//     this.createGrid(options);
-//     this.carveMaze(options);
-//     this.markPath();
-//   };
+export const Maze = function (options) {
+  this.createGrid(options);
+  this.carveMaze(options);
+  this.markPath();
+};
 
-//   Maze.prototype.createGrid = function (options) {
-//     this._grid = new Grid(options.rows, options.columns);
-//   };
+Maze.prototype.createGrid = function (options) {
+  this._grid = new Grid(options.rows, options.columns);
+};
 
-//   Maze.prototype.carveMaze = function (options) {
-//     algorithms[options.algorithm](this._grid);
-//   };
+Maze.prototype.carveMaze = function (options) {
+  // algorithms[options.algorithm](this._grid);
+};
 
-//   Maze.prototype.markPath = function () {
-//     const path = longest(this._grid);
-//     path.start.mark(true);
-//     path.end.mark(true);
-//   };
+Maze.prototype.markPath = function () {
+  // const path = longest(this._grid);
+  // path.start.mark(true);
+  // path.end.mark(true);
+};
 
-//   Maze.prototype.grid = function () {
-//     return this._grid;
-//   };
-
-//   return Maze;
-// }));
+Maze.prototype.grid = function () {
+  return this._grid;
+};

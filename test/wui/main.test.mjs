@@ -19,7 +19,7 @@ if (typeof document === 'object') {
     it('should render according to options', function () {
       main();
       document.getElementById.should.have.been.calledWith('wui');
-      element.innerHTML.should.equal('wui/main 0,1,2,3,4,5');
+      element.innerHTML.should.equal('wui/main 15');
     });
   });
 }

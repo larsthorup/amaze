@@ -1,6 +1,6 @@
 import sinon from 'sinon';
 
-import { main } from '../../src/cli/main.mjs';
+import * as cli from '../../src/cli/main.mjs';
 
 // /* eslint-env amd, mocha */
 // (function (depNames, factory) {
@@ -15,28 +15,24 @@ import { main } from '../../src/cli/main.mjs';
 //   }
 // }(['sinon', '../../src/lib/util', '../../src/cli/main'], function (sinon, _, cli) {
 describe('main/cli', function () {
-  it('should render according to options', function () {
-    const log = sinon.stub(console, 'log');
-    main();
-    log.should.have.been.calledWith('cli/main 0,1,2,3,4,5');
+  beforeEach(function () {
+    this.sinon = sinon.createSandbox();
   });
-  //     beforeEach(function () {
-  //       this.sinon = sinon.createSandbox();
-  //     });
 
-  //     afterEach(function () {
-  //       this.sinon.restore();
-  //     });
+  afterEach(function () {
+    this.sinon.restore();
+  });
 
-  //     it('render according to options', function () {
+  it('render according to options', function () {
   //       this.sinon.stub(_, 'random').returnsArg(0); // To make the algorithm predictable for testing
-  //       this.sinon.stub(console, 'log');
-  //       cli.main({
-  //         rows: 2,
-  //         columns: 2,
-  //         algorithm: 'binaryTree',
-  //         view: 'ascii'
-  //       });
+    this.sinon.stub(console, 'log');
+    cli.main({
+      rows: 2,
+      columns: 2,
+      algorithm: 'binaryTree',
+      view: 'ascii'
+    });
+    console.log.should.have.been.calledWith('cli/main 2');
   //       console.log.should.have.been.calledWith([
   //         '+---+---+',
   //         '| x     |',
@@ -45,6 +41,6 @@ describe('main/cli', function () {
   //         '+---+---+',
   //         ''
   //       ].join('\n'));
-  //     });
+  });
 });
 // }));
