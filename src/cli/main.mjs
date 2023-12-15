@@ -6,10 +6,12 @@ const views = {
   // svg: SvgGridView
 };
 
-export function main (options) {
+function main (options) {
   const maze = new Maze(options);
   const View = views[options.view];
   const view = new View({ model: maze.grid() });
   view.render();
   console.log(view.source());
 }
+
+export default { main };

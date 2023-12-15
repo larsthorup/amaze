@@ -20,3 +20,5 @@ export function main () {
   //     $('#wui')[0].innerHTML = view.source();
   document.getElementById('wui').innerHTML = `wui/main ${maze.grid().rows()}`;
 }
+
+export default { main };

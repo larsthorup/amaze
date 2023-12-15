@@ -1,7 +1,7 @@
 /* eslint-env mocha */
 import sinon from 'sinon';
 
-import { main } from '../../src/wui/main.mjs';
+import wui from '../../src/wui/main.mjs';
 
 if (typeof document === 'object') {
   // Note: cannot test DOM-referencing code on Node
@@ -17,7 +17,7 @@ if (typeof document === 'object') {
     });
 
     it('should render according to options', function () {
-      main();
+      wui.main();
       document.getElementById.should.have.been.calledWith('wui');
       element.innerHTML.should.equal('wui/main 15');
     });

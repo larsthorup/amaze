@@ -1,12 +1,19 @@
-export function inRange (value, limit) {
+function inRange (value, limit) {
   return value >= 0 && value < limit;
 }
-export function random (limit) {
+function random (limit) {
   return Math.floor(Math.random() * limit);
 }
-export function range (length) {
+function range (length) {
   return [...Array(length).keys()];
 }
-export function sample (list) {
+function sample (list) {
   return list[random(list.length)];
 }
+
+export default {
+  inRange,
+  random,
+  range,
+  sample
+};

@@ -1,4 +1,4 @@
-import * as _ from '../lib/util.mjs';
+import _ from '../lib/util.mjs';
 import { Cell } from './cell.mjs';
 
 export function Grid (rows, columns) {

@@ -1,5 +1,9 @@
 import { Grid } from './grid.mjs';
 
+import { binaryTree } from '../algorithm/maze/binaryTree.mjs';
+import { recursiveBacktracker } from '../algorithm/maze/recursiveBacktracker.mjs';
+import { longest } from '../algorithm/path/longest.mjs';
+
 // /* eslint-env amd */
 // (function (depNames, factory) {
 //   if (typeof define === 'function' && define.amd) {
@@ -20,12 +24,12 @@ import { Grid } from './grid.mjs';
 //   '../algorithm/maze/aldousBroder',
 //   '../algorithm/maze/recursiveBacktracker'
 // ], function (Cell, Grid, longest, binaryTree, sideWinder, aldousBroder, recursiveBacktracker) {
-//   const algorithms = {
-//     binaryTree,
-//     sideWinder,
-//     aldousBroder,
-//     recursiveBacktracker
-//   };
+const algorithms = {
+  binaryTree,
+  // sideWinder,
+  // aldousBroder,
+  recursiveBacktracker
+};
 
 export const Maze = function (options) {
   this.createGrid(options);
@@ -38,13 +42,13 @@ Maze.prototype.createGrid = function (options) {
 };
 
 Maze.prototype.carveMaze = function (options) {
-  // algorithms[options.algorithm](this._grid);
+  algorithms[options.algorithm](this._grid);
 };
 
 Maze.prototype.markPath = function () {
-  // const path = longest(this._grid);
-  // path.start.mark(true);
-  // path.end.mark(true);
+  const path = longest(this._grid);
+  path.start.mark(true);
+  path.end.mark(true);
 };
 
 Maze.prototype.grid = function () {
