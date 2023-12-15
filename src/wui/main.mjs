@@ -1,9 +1,5 @@
 import { range } from '../lib/util.mjs';
 
-export function main() {
-  document.getElementById('wui').innerHTML = `wui/main ${range(6)}`;
-}
-
 // /* eslint-env amd */
 
 // define([
@@ -11,7 +7,8 @@ export function main() {
 //   '../view/svg/grid',
 //   '../model/maze'
 // ], function ($, SvgGridView, Maze) {
-//   function main () {
+export function main () {
+  document.getElementById('wui').innerHTML = `wui/main ${range(6)}`;
 //     const options = {
 //       rows: 15,
 //       columns: 15,
@@ -24,7 +21,7 @@ export function main() {
 //     });
 //     view.render();
 //     $('#wui')[0].innerHTML = view.source();
-//   }
+}
 
 //   return {
 //     main

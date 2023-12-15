@@ -2,7 +2,7 @@ import sinon from 'sinon';
 
 import { main } from '../../src/wui/main.mjs';
 
-if (typeof document === "object") {
+if (typeof document === 'object') {
   // Note: cannot test DOM-referencing code on Node
   describe('main/wui', function () {
     let element;

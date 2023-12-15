@@ -1,4 +1,4 @@
-import * as wui from "./wui/main.mjs";
+import * as wui from './wui/main.mjs';
 
 wui.main();
 

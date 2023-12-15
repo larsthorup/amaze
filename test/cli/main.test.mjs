@@ -2,14 +2,6 @@ import sinon from 'sinon';
 
 import { main } from '../../src/cli/main.mjs';
 
-describe('main/cli', function () {
-  it('should render according to options', function () {
-    const log = sinon.stub(console, 'log');
-    main();
-    log.should.have.been.calledWith('cli/main 0,1,2,3,4,5');
-  });
-});
-
 // /* eslint-env amd, mocha */
 // (function (depNames, factory) {
 //   if (typeof define === 'function' && define.amd) {
@@ -22,32 +14,37 @@ describe('main/cli', function () {
 //     module.exports = factory.apply(this, deps);
 //   }
 // }(['sinon', '../../src/lib/util', '../../src/cli/main'], function (sinon, _, cli) {
-//   describe('main', function () {
-//     beforeEach(function () {
-//       this.sinon = sinon.createSandbox();
-//     });
+describe('main/cli', function () {
+  it('should render according to options', function () {
+    const log = sinon.stub(console, 'log');
+    main();
+    log.should.have.been.calledWith('cli/main 0,1,2,3,4,5');
+  });
+  //     beforeEach(function () {
+  //       this.sinon = sinon.createSandbox();
+  //     });
 
-//     afterEach(function () {
-//       this.sinon.restore();
-//     });
+  //     afterEach(function () {
+  //       this.sinon.restore();
+  //     });
 
-//     it('render according to options', function () {
-//       this.sinon.stub(_, 'random').returnsArg(0); // To make the algorithm predictable for testing
-//       this.sinon.stub(console, 'log');
-//       cli.main({
-//         rows: 2,
-//         columns: 2,
-//         algorithm: 'binaryTree',
-//         view: 'ascii'
-//       });
-//       console.log.should.have.been.calledWith([
-//         '+---+---+',
-//         '| x     |',
-//         '+---+   +',
-//         '| x     |',
-//         '+---+---+',
-//         ''
-//       ].join('\n'));
-//     });
-//   });
+  //     it('render according to options', function () {
+  //       this.sinon.stub(_, 'random').returnsArg(0); // To make the algorithm predictable for testing
+  //       this.sinon.stub(console, 'log');
+  //       cli.main({
+  //         rows: 2,
+  //         columns: 2,
+  //         algorithm: 'binaryTree',
+  //         view: 'ascii'
+  //       });
+  //       console.log.should.have.been.calledWith([
+  //         '+---+---+',
+  //         '| x     |',
+  //         '+---+   +',
+  //         '| x     |',
+  //         '+---+---+',
+  //         ''
+  //       ].join('\n'));
+  //     });
+});
 // }));

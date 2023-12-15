@@ -1,7 +1,5 @@
-import "../test/mocha_setup.mjs";
-import "../test/wui/main.test.mjs";
-
-mocha.run();
+import '../test/mocha_setup.mjs';
+import '../test/wui/main.test.mjs';
 
 // /* eslint-env amd */
 // if (typeof define === 'function' && define.amd) {
@@ -35,7 +33,7 @@ mocha.run();
 
 //     // we have to kickoff mocha, as it is asynchronous
 //     callback: function () {
-//       window.mocha.run((failures) => { window.__mocha_failures__ = failures; });
+window.mocha.run((failures) => { window.__mocha_failures__ = failures; });
 //     }
 //   });
 // }
