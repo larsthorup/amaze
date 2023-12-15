@@ -32,15 +32,17 @@ describe('main/cli', function () {
       algorithm: 'binaryTree',
       view: 'ascii'
     });
-    console.log.should.have.been.calledWith('cli/main 2');
-  //       console.log.should.have.been.calledWith([
-  //         '+---+---+',
-  //         '| x     |',
-  //         '+---+   +',
-  //         '| x     |',
-  //         '+---+---+',
-  //         ''
-  //       ].join('\n'));
+    console.log.should.have.been.calledWith([
+      '+---+---+',
+      '|   |   |',
+      '+---+---+',
+      '|   |   |',
+      // '| x     |',
+      // '+---+   +',
+      // '| x     |',
+      '+---+---+',
+      ''
+    ].join('\n'));
   });
 });
 // }));
