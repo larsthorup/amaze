@@ -1,3 +1,4 @@
+/* eslint-env mocha */
 import sinon from 'sinon';
 
 import { main } from '../../src/wui/main.mjs';
@@ -22,15 +23,3 @@ if (typeof document === 'object') {
     });
   });
 }
-
-// /* eslint-env amd, mocha */
-// (function (depNames, factory) {
-//   if (typeof define === 'function' && define.amd) {
-//     define(depNames, factory);
-//   } else if (typeof exports === 'object') {
-//   }
-// }(['../../src/wui/main'], function (wui) {
-//   describe('main', function () {
-//     it.skip('render according to options');
-//   });
-// }));
