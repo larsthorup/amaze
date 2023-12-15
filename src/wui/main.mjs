@@ -1,5 +1,7 @@
+import { range } from '../lib/util.mjs';
+
 export function main() {
-  document.getElementById('wui').innerHTML = 'wui/main';
+  document.getElementById('wui').innerHTML = `wui/main ${range(6)}`;
 }
 
 // /* eslint-env amd */

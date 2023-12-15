@@ -1,5 +1,7 @@
+import { range } from '../lib/util.mjs';
+
 export function main() {
-  console.log('cli/main');
+  console.log(`cli/main ${range(6)}`);
 }
 
 // const Maze = require('../model/maze');
