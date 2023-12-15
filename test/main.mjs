@@ -3,7 +3,7 @@ import '../test/mocha_setup.mjs';
 // const allTestFiles = [
 import '../test/model/cell.test.mjs';
 import '../test/model/grid.test.mjs';
-// '../test/model/distances.test',
+import '../test/model/distances.test.mjs';
 // '../test/view/ascii/grid.test',
 // '../test/view/svg/grid.test',
 // '../test/algorithm/maze/binaryTree.test',
