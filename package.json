@@ -28,7 +28,8 @@
   "scripts": {
     "lint": "semistandard --verbose",
     "mocha": "mocha",
-    "start": "node src/index",
+    "serve": "http-server . -p 8080 --mimetypes dev/mime.types -o /src/index.html",
+    "start": "node src/index.mjs",
     "test:node": "nyc --nycrc-path=test/nyc.conf.js node_modules/mocha/bin/_mocha",
     "test:browser": "node dev/puppeteer-runner.mjs",
     "test": "npm run lint && npm run test:node && npm run test:browser"
