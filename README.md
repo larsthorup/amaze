@@ -22,7 +22,8 @@ Maze generation in isomorphic JavaScript
     npm test
     npm start
     npm run serve
-    open src/index.html || start src/index.html
+    http://127.0.0.1:8080/src/index.html
+    http://127.0.0.1:8080/test/index.html
 
 ## Sample output
 

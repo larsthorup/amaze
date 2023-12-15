@@ -6,6 +6,16 @@
 </head>
 <body>
 
+<script type="importmap">
+    {
+        "imports": {
+            "@esm-bundle/chai": "../node_modules/@esm-bundle/chai/esm/chai.js",
+            "sinon": "../node_modules/sinon/pkg/sinon-esm.js",
+            "sinon-chai-es": "../node_modules/sinon-chai-es/lib/sinon-chai.mjs"
+        }
+    }
+</script>      
+
 <!-- test library -->
 <div id="mocha"></div>
 <script src="../node_modules/mocha/mocha.js"></script>
@@ -15,11 +25,11 @@
 </script>
 
 <!-- polyfills -->
-<script src="../node_modules/requirejs/require.js"></script>
-<script src="../src/require.conf.js"></script>
+<!-- <script src="../node_modules/requirejs/require.js"></script> -->
+<!-- <script src="../src/require.conf.js"></script> -->
 
 <!-- main -->
-<script src="main.js"></script>
+<script src="main.mjs" type="module"></script>
 
 </body>
 </html>
