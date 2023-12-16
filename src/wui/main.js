@@ -1,26 +1,14 @@
-/* eslint-env amd */
+import $ from '../browser/bling.js';
+import { SvgGridView } from '../view/svg/grid.js';
+import { Maze } from '../model/maze.js';
 
-define([
-  '../browser/bling',
-  '../view/svg/grid',
-  '../model/maze'
-], function ($, SvgGridView, Maze) {
-  function main () {
-    const options = {
-      rows: 15,
-      columns: 15,
-      algorithm: 'recursiveBacktracker',
-      view: 'svg'
-    };
-    const maze = new Maze(options);
-    const view = new SvgGridView({
-      model: maze.grid()
-    });
-    view.render();
-    $('#wui')[0].innerHTML = view.source();
-  }
+function main (options) {
+  const maze = new Maze(options);
+  const view = new SvgGridView({
+    model: maze.grid()
+  });
+  view.render();
+  $('#wui')[0].innerHTML = view.source();
+}
 
-  return {
-    main
-  };
-});
+export default { main };

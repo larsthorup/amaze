@@ -11,8 +11,6 @@ Maze generation in isomorphic JavaScript
 
 ## TODO
 
-- switch from requirejs to ES6 modules
-- isomorphic ES6 module mocking? (_.random, _.sample, console.log)
 - JSDoc typing
 
 ## Getting Started
@@ -20,7 +18,9 @@ Maze generation in isomorphic JavaScript
     npm install
     npm test
     npm start
-    open src/index.html || start src/index.html
+    npm run serve
+    http://127.0.0.1:8080/src/index.html
+    http://127.0.0.1:8080/test/index.html
 
 ## Sample output
 

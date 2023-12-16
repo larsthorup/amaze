@@ -1,11 +1,11 @@
-/* eslint-env amd */
+import wui from './wui/main.js';
 
-// Note: require.conf.js is already loaded by now
-require.config({
-  deps: ['./wui/main'],
-
-  // we have to kickoff mocha, as it is asynchronous
-  callback: function (wui) {
-    wui.main();
-  }
+wui.main({
+  rows: 15,
+  columns: 15,
+  // algorithm: 'aldousBroder',
+  // algorithm: 'binaryTree',
+  algorithm: 'recursiveBacktracker',
+  // algorithm: 'sideWinder',
+  view: 'svg'
 });

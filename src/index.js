@@ -1,4 +1,5 @@
-const cli = require('./cli/main');
+import cli from './cli/main.js';
+
 const options = {};
 options.rows = process.argv[2] || 15;
 options.columns = process.argv[3] || 15;

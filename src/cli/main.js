@@ -1,8 +1,11 @@
-const Maze = require('../model/maze');
-const views = {};
-['ascii', 'svg'].forEach(viewName => {
-  views[viewName] = require(`../view/${viewName}/grid`);
-});
+import { Maze } from '../model/maze.js';
+import { AsciiGridView } from '../view/ascii/grid.js';
+import { SvgGridView } from '../view/svg/grid.js';
+
+const views = {
+  ascii: AsciiGridView,
+  svg: SvgGridView
+};
 
 function main (options) {
   const maze = new Maze(options);
@@ -12,6 +15,4 @@ function main (options) {
   console.log(view.source());
 }
 
-module.exports = {
-  main
-};
+export default { main };

@@ -1,27 +1,12 @@
-/* eslint-env amd */
-(function (depNames, factory) {
-  if (typeof define === 'function' && define.amd) {
-    define(depNames, factory);
-  } else if (typeof exports === 'object') {
-    const deps = [];
-    for (let i = 0; i < depNames.length; ++i) {
-      deps.push(require(depNames[i]));
-    }
-    module.exports = factory.apply(this, deps);
-  }
-}([
-  '../distance/dijkstra'
-], function (dijkstra) {
-  function longest (grid) {
-    const sample = grid.sample();
-    let distances = dijkstra(sample);
-    const path = {
-      start: distances.max().cell
-    };
-    distances = dijkstra(path.start);
-    path.end = distances.max().cell;
-    return path;
-  }
+import { dijkstra } from '../distance/dijkstra.js';
 
-  return longest;
-}));
+export function longest (grid) {
+  const sample = grid.sample();
+  let distances = dijkstra(sample);
+  const path = {
+    start: distances.max().cell
+  };
+  distances = dijkstra(path.start);
+  path.end = distances.max().cell;
+  return path;
+}
