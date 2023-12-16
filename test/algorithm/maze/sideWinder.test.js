@@ -1,8 +1,8 @@
 /* eslint-env mocha */
 import sinon from 'sinon';
-import _ from '../../../src/lib/util.mjs';
-import { Grid } from '../../../src/model/grid.mjs';
-import { sideWinder } from '../../../src/algorithm/maze/sideWinder.mjs';
+import _ from '../../../src/lib/util.js';
+import { Grid } from '../../../src/model/grid.js';
+import { sideWinder } from '../../../src/algorithm/maze/sideWinder.js';
 
 describe('algorithm/maze/sideWinder', function () {
   beforeEach(function () {

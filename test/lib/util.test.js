@@ -1,5 +1,5 @@
 /* eslint-env mocha */
-import _ from '../../src/lib/util.mjs';
+import _ from '../../src/lib/util.js';
 
 describe('lib/util', function () {
   describe('inRange', function () {

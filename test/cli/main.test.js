@@ -1,8 +1,8 @@
 /* eslint-env mocha */
 import sinon from 'sinon';
 
-import _ from '../../src/lib/util.mjs';
-import cli from '../../src/cli/main.mjs';
+import _ from '../../src/lib/util.js';
+import cli from '../../src/cli/main.js';
 
 describe('main/cli', function () {
   beforeEach(function () {

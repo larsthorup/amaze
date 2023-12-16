@@ -1,6 +1,6 @@
 /* eslint-env amd, mocha */
-import { Grid } from '../../../src/model/grid.mjs';
-import { AsciiGridView } from '../../../src/view/ascii/grid.mjs';
+import { Grid } from '../../../src/model/grid.js';
+import { AsciiGridView } from '../../../src/view/ascii/grid.js';
 
 describe('view/ascii/grid', function () {
   it('should produce a readable ascii representation of the grid', function () {

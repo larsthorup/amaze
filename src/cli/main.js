@@ -1,6 +1,6 @@
-import { Maze } from '../model/maze.mjs';
-import { AsciiGridView } from '../view/ascii/grid.mjs';
-import { SvgGridView } from '../view/svg/grid.mjs';
+import { Maze } from '../model/maze.js';
+import { AsciiGridView } from '../view/ascii/grid.js';
+import { SvgGridView } from '../view/svg/grid.js';
 
 const views = {
   ascii: AsciiGridView,

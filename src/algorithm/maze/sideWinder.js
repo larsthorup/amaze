@@ -1,4 +1,4 @@
-import _ from '../../lib/util.mjs';
+import _ from '../../lib/util.js';
 
 export function sideWinder (grid) {
   grid.eachRow(function (row) {

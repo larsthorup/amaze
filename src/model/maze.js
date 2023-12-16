@@ -1,10 +1,10 @@
-import { Grid } from './grid.mjs';
+import { Grid } from './grid.js';
 
-import { aldousBroder } from '../algorithm/maze/aldousBroder.mjs';
-import { binaryTree } from '../algorithm/maze/binaryTree.mjs';
-import { recursiveBacktracker } from '../algorithm/maze/recursiveBacktracker.mjs';
-import { sideWinder } from '../algorithm/maze/sideWinder.mjs';
-import { longest } from '../algorithm/path/longest.mjs';
+import { aldousBroder } from '../algorithm/maze/aldousBroder.js';
+import { binaryTree } from '../algorithm/maze/binaryTree.js';
+import { recursiveBacktracker } from '../algorithm/maze/recursiveBacktracker.js';
+import { sideWinder } from '../algorithm/maze/sideWinder.js';
+import { longest } from '../algorithm/path/longest.js';
 
 const algorithms = {
   binaryTree,

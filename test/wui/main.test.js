@@ -1,8 +1,8 @@
 /* eslint-env mocha */
 import sinon from 'sinon';
 
-import _ from '../../src/lib/util.mjs';
-import wui from '../../src/wui/main.mjs';
+import _ from '../../src/lib/util.js';
+import wui from '../../src/wui/main.js';
 
 if (typeof document === 'object') {
   // Note: cannot test DOM-referencing code on Node

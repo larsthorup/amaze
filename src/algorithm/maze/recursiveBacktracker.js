@@ -1,4 +1,4 @@
-import _ from '../../lib/util.mjs';
+import _ from '../../lib/util.js';
 
 function hasNoLinks (cell) {
   return cell.links().length === 0;

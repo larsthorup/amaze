@@ -1,4 +1,4 @@
-import cli from './cli/main.mjs';
+import cli from './cli/main.js';
 
 const options = {};
 options.rows = process.argv[2] || 15;

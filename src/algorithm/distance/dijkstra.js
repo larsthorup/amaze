@@ -1,4 +1,4 @@
-import { Distances } from '../../model/distances.mjs';
+import { Distances } from '../../model/distances.js';
 
 function expand (distances, frontier) {
   const newFrontier = [];

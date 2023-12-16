@@ -1,9 +1,9 @@
 /* eslint-env mocha */
 import sinon from 'sinon';
-import _ from '../../../src/lib/util.mjs';
-import { Grid } from '../../../src/model/grid.mjs';
-import { binaryTree } from '../../../src/algorithm/maze/binaryTree.mjs';
-import { longest } from '../../../src/algorithm/path/longest.mjs';
+import _ from '../../../src/lib/util.js';
+import { Grid } from '../../../src/model/grid.js';
+import { binaryTree } from '../../../src/algorithm/maze/binaryTree.js';
+import { longest } from '../../../src/algorithm/path/longest.js';
 
 describe('algorithm/path/longest', function () {
   beforeEach(function () {

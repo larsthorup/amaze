@@ -1,5 +1,5 @@
 {
   "reporter": "dot",
-  "require": "test/mocha_setup.mjs",
-  "spec": "test/**/*.test.mjs"
+  "require": "test/mocha_setup.js",
+  "spec": "test/**/*.test.js"
 }

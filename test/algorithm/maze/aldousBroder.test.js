@@ -1,10 +1,11 @@
 /* eslint-env mocha */
 import sinon from 'sinon';
-import _ from '../../../src/lib/util.mjs';
-import { Grid } from '../../../src/model/grid.mjs';
-import { recursiveBacktracker } from '../../../src/algorithm/maze/recursiveBacktracker.mjs';
+import _ from '../../../src/lib/util.js';
+import { Grid } from '../../../src/model/grid.js';
+import { aldousBroder } from '../../../src/algorithm/maze/aldousBroder.js';
+// import { GridView } from '../../../src/view/ascii/grid.js';
 
-describe('algorithm/maze/recursiveBacktracker', function () {
+describe('algorithm/maze/aldousBroder', function () {
   beforeEach(function () {
     this.sinon = sinon.createSandbox();
   });
@@ -15,7 +16,7 @@ describe('algorithm/maze/recursiveBacktracker', function () {
 
   it('should create a maze', function () {
     // Node: make the algorithm predictable for testing
-    this.sinon.stub(_, 'random').returnsArg(0);
+    this.sinon.stub(_, 'random').returnsArg(0); // To make the algorithm predictable for testing
     let index = 999;
     this.sinon.stub(_, 'sample').callsFake(function (array) {
       ++index;
@@ -24,7 +25,7 @@ describe('algorithm/maze/recursiveBacktracker', function () {
     });
 
     const grid = new Grid(2, 2);
-    recursiveBacktracker(grid);
+    aldousBroder(grid);
     // console.log(new GridView({model: grid}).render());
     grid.cell(0, 0).isLinked(grid.cell(0, 1)).should.equal(true);
     grid.cell(0, 1).isLinked(grid.cell(1, 1)).should.equal(true);

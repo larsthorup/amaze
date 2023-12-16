@@ -1,6 +1,6 @@
-import $ from '../browser/bling.mjs';
-import { SvgGridView } from '../view/svg/grid.mjs';
-import { Maze } from '../model/maze.mjs';
+import $ from '../browser/bling.js';
+import { SvgGridView } from '../view/svg/grid.js';
+import { Maze } from '../model/maze.js';
 
 function main (options) {
   const maze = new Maze(options);

@@ -10,6 +10,7 @@
     "url": "https://github.com/larsthorup/mars.git"
   },
   "version": "0.1.1",
+  "type": "module",
   "description": "Maze generation in isomorphic JavaScript",
   "dependencies": {
     "@esm-bundle/chai": "^4.3.4-fix.0",
@@ -30,9 +31,9 @@
     "lint": "semistandard --verbose",
     "mocha": "mocha",
     "serve": "http-server . -p 8080 --mimetypes dev/mime.types -o /src/index.html",
-    "start": "node src/index.mjs",
+    "start": "node src/index.js",
     "test:node": "c8 mocha",
-    "test:browser": "node dev/puppeteer-runner.mjs",
+    "test:browser": "node dev/puppeteer-runner.js",
     "test": "npm run lint && npm run test:node && npm run test:browser"
   }
 }

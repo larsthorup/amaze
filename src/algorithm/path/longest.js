@@ -1,4 +1,4 @@
-import { dijkstra } from '../distance/dijkstra.mjs';
+import { dijkstra } from '../distance/dijkstra.js';
 
 export function longest (grid) {
   const sample = grid.sample();

@@ -1,5 +1,5 @@
-import _ from '../lib/util.mjs';
-import { Cell } from './cell.mjs';
+import _ from '../lib/util.js';
+import { Cell } from './cell.js';
 
 export function Grid (rows, columns) {
   this._rows = rows;

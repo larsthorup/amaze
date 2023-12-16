@@ -1,6 +1,6 @@
 /* eslint-env mocha */
-import { Cell } from '../../src/model/cell.mjs';
-import { Distances } from '../../src/model/distances.mjs';
+import { Cell } from '../../src/model/cell.js';
+import { Distances } from '../../src/model/distances.js';
 
 describe('model/distances', function () {
   describe('constructor', function () {

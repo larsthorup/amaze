@@ -1,6 +1,6 @@
 /* eslint-env mocha */
 
-import { Cell } from '../../src/model/cell.mjs';
+import { Cell } from '../../src/model/cell.js';
 
 describe('model/cell', function () {
   describe('constructor', function () {

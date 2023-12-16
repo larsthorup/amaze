@@ -1,4 +1,4 @@
-import wui from './wui/main.mjs';
+import wui from './wui/main.js';
 
 wui.main({
   rows: 15,

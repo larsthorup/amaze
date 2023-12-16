@@ -1,6 +1,6 @@
 /* eslint-env mocha */
-import { Grid } from '../../../src/model/grid.mjs';
-import { SvgGridView } from '../../../src/view/svg/grid.mjs';
+import { Grid } from '../../../src/model/grid.js';
+import { SvgGridView } from '../../../src/view/svg/grid.js';
 
 describe('view/svg/grid', function () {
   it('should produce an svg representation of the grid', function () {

@@ -1,5 +1,5 @@
 /* eslint-env mocha */
-import { Grid } from '../../src/model/grid.mjs';
+import { Grid } from '../../src/model/grid.js';
 
 describe('model/grid', function () {
   describe('constructor', function () {
