@@ -21,17 +21,15 @@
     "sinon-chai-es": "^3.7.0"
   },
   "devDependencies": {
-    "chai": "^4.2.0",
     "mocha": "^10.2.0",
     "semistandard": "^17.0.0",
-    "sinon": "^17.0.1",
-    "sinon-chai": "^3.4.0"
+    "sinon": "^17.0.1"
   },
   "scripts": {
     "lint": "semistandard --verbose",
     "mocha": "mocha",
     "serve": "http-server . -p 8080 --mimetypes dev/mime.types -o /src/index.html",
-    "start": "node src/index.js",
+    "start": "node src/index",
     "test:node": "c8 mocha",
     "test:browser": "node dev/puppeteer-runner.js",
     "test": "npm run lint && npm run test:node && npm run test:browser"
