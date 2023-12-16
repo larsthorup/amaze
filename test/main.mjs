@@ -1,5 +1,6 @@
 import '../test/mocha_setup.mjs';
 
+import '../test/lib/util.test.mjs';
 import '../test/model/cell.test.mjs';
 import '../test/model/grid.test.mjs';
 import '../test/model/distances.test.mjs';

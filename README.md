@@ -11,9 +11,6 @@ Maze generation in isomorphic JavaScript
 
 ## TODO
 
-- switch from requirejs to ES6 modules
-  - cannot load modules over file:// urls, so must serve over http://
-- isomorphic ES6 module mocking? (_.random, _.sample, console.log)
 - JSDoc typing
 
 ## Getting Started
