@@ -1,33 +1,15 @@
 import { Grid } from './grid.mjs';
 
+import { aldousBroder } from '../algorithm/maze/aldousBroder.mjs';
 import { binaryTree } from '../algorithm/maze/binaryTree.mjs';
 import { recursiveBacktracker } from '../algorithm/maze/recursiveBacktracker.mjs';
+import { sideWinder } from '../algorithm/maze/sideWinder.mjs';
 import { longest } from '../algorithm/path/longest.mjs';
 
-// /* eslint-env amd */
-// (function (depNames, factory) {
-//   if (typeof define === 'function' && define.amd) {
-//     define(depNames, factory);
-//   } else if (typeof exports === 'object') {
-//     const deps = [];
-//     for (let i = 0; i < depNames.length; ++i) {
-//       deps.push(require(depNames[i]));
-//     }
-//     module.exports = factory.apply(this, deps);
-//   }
-// }([
-//   './cell',
-//   '../model/grid',
-//   '../algorithm/path/longest',
-//   '../algorithm/maze/binaryTree',
-//   '../algorithm/maze/sideWinder',
-//   '../algorithm/maze/aldousBroder',
-//   '../algorithm/maze/recursiveBacktracker'
-// ], function (Cell, Grid, longest, binaryTree, sideWinder, aldousBroder, recursiveBacktracker) {
 const algorithms = {
   binaryTree,
-  // sideWinder,
-  // aldousBroder,
+  sideWinder,
+  aldousBroder,
   recursiveBacktracker
 };
 
