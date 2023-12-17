@@ -1,6 +1,7 @@
 import * as ChromeLauncher from 'chrome-launcher';
 import httpServer from 'http-server';
 import puppeteer from 'puppeteer-core';
+import { assert } from '../src/lib/assert.js';
 
 // Note: inspired by https://github.com/direct-adv-interfaces/mocha-headless-chrome/
 
@@ -22,7 +23,9 @@ const main = async () => {
 
 const startingServer = async () => {
   const server = httpServer.createServer({ root });
-  await new Promise((resolve) => server.listen(port, 'localhost', resolve));
+  await new Promise(
+    (resolve) => server.listen(port, 'localhost', undefined, () => resolve(undefined))
+  );
 };
 
 const runningMochaInPuppeteer = async () => {
@@ -34,7 +37,10 @@ const runningMochaInPuppeteer = async () => {
   const browser = await puppeteer.launch(options);
   const pages = await browser.pages();
   const page = pages.pop();
-  page.on('console', mochaConsoleHandler);
+  assert(page);
+  page.on('console', (msg) => {
+    console.log(msg.text());
+  });
   page.on('pageerror', ({ message }) => {
     console.error(message);
   });
@@ -42,20 +48,16 @@ const runningMochaInPuppeteer = async () => {
     // console.log(`${response.status()} ${response.url()}`);
   });
   page.on('requestfailed', (request) => {
-    console.error(`${request.failure().errorText} ${request.url()}`);
+    console.error(`${(request.failure() || {}).errorText} ${request.url()}`);
   });
   page.on('dialog', (dialog) => dialog.dismiss());
   await page.goto(url);
-  await page.waitForFunction(() => window.__mocha_failures__ !== undefined, {
-    timeout
-  });
+  await page.waitForFunction(() => {
+    return window.__mocha_failures__ !== undefined;
+  }, { timeout });
   const failures = await page.evaluate(() => window.__mocha_failures__);
   await browser.close();
   return failures;
-};
-
-const mochaConsoleHandler = (msg) => {
-  console.log(msg.text());
 };
 
 main();

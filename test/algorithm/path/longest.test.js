@@ -1,4 +1,5 @@
 /* eslint-env mocha */
+import { expect } from '@esm-bundle/chai';
 import sinon from 'sinon';
 import _ from '../../../src/lib/util.js';
 import { Grid } from '../../../src/model/grid.js';
@@ -19,7 +20,7 @@ describe('algorithm/path/longest', function () {
     const grid = new Grid(2, 2);
     binaryTree(grid);
     const path = longest(grid);
-    path.start.should.equal(grid.cell(0, 0));
-    path.end.should.equal(grid.cell(1, 0));
+    expect(path.start).to.equal(grid.cell(0, 0));
+    expect(path.end).to.equal(grid.cell(1, 0));
   });
 });

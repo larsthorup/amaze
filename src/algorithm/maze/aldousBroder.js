@@ -1,5 +1,10 @@
 import _ from '../../lib/util.js';
 
+/** @typedef {import('../../model/grid.js').Grid} Grid */
+
+/**
+ * @param {Grid} grid
+ */
 export function aldousBroder (grid) {
   let cell = grid.sample();
   let unvisited = grid.size() - 1;

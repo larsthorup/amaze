@@ -1,8 +1,16 @@
 import cli from './cli/main.js';
+import { isAlgorithm } from './model/maze.js';
+import { isViewType } from './view/views.js';
 
-const options = {};
-options.rows = process.argv[2] || 15;
-options.columns = process.argv[3] || 15;
-options.algorithm = process.argv[4] || 'recursiveBacktracker';
-options.view = process.argv[5] || 'ascii';
+/** @typedef {import('./model/maze.js').Algorithm} Algorithm */
+/** @typedef {import('./model/maze.js').MazeOptions} MazeOptions */
+
+const [, , rows, columns, algorithm, view] = process.argv;
+/** @type {MazeOptions} */
+const options = {
+  rows: parseInt(rows || '15'),
+  columns: parseInt(columns || '15'),
+  algorithm: isAlgorithm(algorithm) ? algorithm : 'recursiveBacktracker',
+  view: isViewType(view) ? view : 'ascii'
+};
 cli.main(options);

@@ -1,4 +1,5 @@
 /* eslint-env mocha */
+import { expect } from '@esm-bundle/chai';
 import sinon from 'sinon';
 import _ from '../../../src/lib/util.js';
 import { Grid } from '../../../src/model/grid.js';
@@ -19,9 +20,9 @@ describe('algorithm/distance/dijkstra', function () {
     const grid = new Grid(2, 2);
     binaryTree(grid);
     const distances = dijkstra(grid.cell(0, 0));
-    distances.distance(grid.cell(0, 0)).should.equal(0);
-    distances.distance(grid.cell(0, 1)).should.equal(1);
-    distances.distance(grid.cell(1, 0)).should.equal(3);
-    distances.distance(grid.cell(1, 1)).should.equal(2);
+    expect(distances.distance(grid.cell(0, 0))).to.equal(0);
+    expect(distances.distance(grid.cell(0, 1))).to.equal(1);
+    expect(distances.distance(grid.cell(1, 0))).to.equal(3);
+    expect(distances.distance(grid.cell(1, 1))).to.equal(2);
   });
 });

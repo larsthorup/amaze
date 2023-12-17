@@ -14,4 +14,12 @@ import './algorithm/distance/dijkstra.test.js';
 import './algorithm/path/longest.test.js';
 import '../test/wui/main.test.js';
 
-window.mocha.run((failures) => { window.__mocha_failures__ = failures; });
+// @ts-ignore Property 'mocha' does not exist on type 'Window & typeof globalThis'.
+window.mocha.run(
+  /**
+   * @param {number} failures
+   */
+  (failures) => {
+    window.__mocha_failures__ = failures;
+  }
+);

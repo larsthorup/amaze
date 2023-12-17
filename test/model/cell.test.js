@@ -1,13 +1,14 @@
 /* eslint-env mocha */
 
+import { expect } from '@esm-bundle/chai';
 import { Cell } from '../../src/model/cell.js';
 
 describe('model/cell', function () {
   describe('constructor', function () {
     it('should set row and column', function () {
       const cell = new Cell(2, 5);
-      cell.row().should.equal(2);
-      cell.column().should.equal(5);
+      expect(cell.row()).to.equal(2);
+      expect(cell.column()).to.equal(5);
     });
   });
 
@@ -18,14 +19,14 @@ describe('model/cell', function () {
       const cell3 = new Cell(3, 3);
       cell1.link(cell2);
       cell1.link(cell3);
-      cell1.isLinked(cell2).should.equal(true);
-      cell2.isLinked(cell1).should.equal(true);
-      cell1.isLinked(cell3).should.equal(true);
-      cell2.isLinked(cell3).should.equal(false);
+      expect(cell1.isLinked(cell2)).to.equal(true);
+      expect(cell2.isLinked(cell1)).to.equal(true);
+      expect(cell1.isLinked(cell3)).to.equal(true);
+      expect(cell2.isLinked(cell3)).to.equal(false);
       const links = cell1.links();
-      links.length.should.equal(2);
-      links[0].should.equal(cell2);
-      links[1].should.equal(cell3);
+      expect(links.length).to.equal(2);
+      expect(links[0]).to.equal(cell2);
+      expect(links[1]).to.equal(cell3);
     });
   });
 
@@ -35,8 +36,8 @@ describe('model/cell', function () {
       const cell2 = new Cell(2, 2);
       cell1.link(cell2);
       cell1.unlink(cell2);
-      cell1.isLinked(cell2).should.equal(false);
-      cell2.isLinked(cell1).should.equal(false);
+      expect(cell1.isLinked(cell2)).to.equal(false);
+      expect(cell2.isLinked(cell1)).to.equal(false);
     });
   });
 
@@ -52,8 +53,8 @@ describe('model/cell', function () {
       cell.east(cellEast);
       cell.west(cellWest);
       const neighbors = cell.neighbors();
-      neighbors.length.should.equal(4);
-      neighbors.should.include.members([cellNorth, cellSouth, cellEast, cellWest]);
+      expect(neighbors.length).to.equal(4);
+      expect(neighbors).to.include.members([cellNorth, cellSouth, cellEast, cellWest]);
     });
   });
 });

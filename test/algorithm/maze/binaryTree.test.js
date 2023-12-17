@@ -1,4 +1,5 @@
 /* eslint-env mocha */
+import { expect } from '@esm-bundle/chai';
 import sinon from 'sinon';
 import _ from '../../../src/lib/util.js';
 import { Grid } from '../../../src/model/grid.js';
@@ -18,9 +19,9 @@ describe('algorithm/maze/binaryTree', function () {
     const grid = new Grid(2, 2);
     binaryTree(grid);
     // console.log(new GridView({model: grid}).render());
-    grid.cell(0, 0).isLinked(grid.cell(0, 1)).should.equal(true);
-    grid.cell(0, 1).isLinked(grid.cell(1, 1)).should.equal(true);
-    grid.cell(1, 1).isLinked(grid.cell(1, 0)).should.equal(true);
-    grid.cell(1, 0).isLinked(grid.cell(0, 0)).should.equal(false);
+    expect(grid.cell(0, 0).isLinked(grid.cell(0, 1))).to.equal(true);
+    expect(grid.cell(0, 1).isLinked(grid.cell(1, 1))).to.equal(true);
+    expect(grid.cell(1, 1).isLinked(grid.cell(1, 0))).to.equal(true);
+    expect(grid.cell(1, 0).isLinked(grid.cell(0, 0))).to.equal(false);
   });
 });

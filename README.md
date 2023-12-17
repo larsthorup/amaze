@@ -7,11 +7,14 @@
 [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg?style=flat-square)](https://github.com/Flet/semistandard)
 
 
-Maze generation in isomorphic JavaScript
+Maze generation in JavaScript:
 
-## TODO
-
-- JSDoc typing
+- isomorphic (Node.js + Browser)
+- typechecked with TypeScript in JSDoc
+- tested with Mocha, Chai and Sinon 
+- no transpilation 
+- no bundling
+- no run-time dependencies
 
 ## Getting Started
 

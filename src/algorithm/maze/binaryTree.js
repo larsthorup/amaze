@@ -1,5 +1,10 @@
 import _ from '../../lib/util.js';
 
+/** @typedef {import('../../model/grid.js').Grid} Grid */
+
+/**
+ * @param {Grid} grid
+ */
 export function binaryTree (grid) {
   grid.eachCell(cell => {
     const neighbors = [];

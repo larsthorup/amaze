@@ -1,12 +1,11 @@
 import { Maze } from '../model/maze.js';
-import { AsciiGridView } from '../view/ascii/grid.js';
-import { SvgGridView } from '../view/svg/grid.js';
+import { views } from '../view/views.js';
 
-const views = {
-  ascii: AsciiGridView,
-  svg: SvgGridView
-};
+/** @typedef {import('../model/maze.js').MazeOptions} MazeOptions */
 
+/**
+ * @param {MazeOptions} options
+ */
 function main (options) {
   const maze = new Maze(options);
   const View = views[options.view];

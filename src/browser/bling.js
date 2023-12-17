@@ -1,4 +1,8 @@
 // https://gist.github.com/paulirish/12fb951a8b893a454b32
+
+/**
+ * @param {string} selector
+ */
 export default function (selector) {
   return document.querySelectorAll(selector);
 }

@@ -1,6 +1,14 @@
+/** @typedef {import('../../model/grid.js').Grid} Grid */
+
+/** @typedef {{model: Grid; pixelsPerCell?: number}} SvgGridOptions */
+
+/**
+ * @param {SvgGridOptions} options
+ */
 export function SvgGridView (options) {
   this._pixelsPerCell = options.pixelsPerCell || 20;
   this._grid = options.model;
+  /** @type {{width: number, height: number, children: string[]}} */
   this._svg = {
     width: this._pixelsPerCell * this._grid.columns() + 1,
     height: this._pixelsPerCell * this._grid.rows() + 1,
@@ -31,10 +39,21 @@ SvgGridView.prototype.render = function () {
   });
 };
 
+/**
+ * @param {number} x1
+ * @param {number} y1
+ * @param {number} x2
+ * @param {number} y2
+ */
 SvgGridView.prototype.drawLine = function (x1, y1, x2, y2) {
   this._svg.children.push(`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" style="stroke: black" />`);
 };
 
+/**
+ * @param {number} cx
+ * @param {number} cy
+ * @param {number} r
+ */
 SvgGridView.prototype.drawDot = function (cx, cy, r) {
   this._svg.children.push(`<circle cx="${cx}" cy="${cy}" r="${r}" style="stroke: black; fill: black" />`);
 };

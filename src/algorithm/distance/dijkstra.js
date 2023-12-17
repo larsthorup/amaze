@@ -1,11 +1,20 @@
 import { Distances } from '../../model/distances.js';
 
+/** @typedef {import('../../model/cell.js').Cell} Cell */
+
+/**
+ * @param {Distances} distances
+ * @param {Cell[]} frontier
+ */
 function expand (distances, frontier) {
+  /** @type {Cell[]} */
   const newFrontier = [];
   frontier.forEach(cell => {
     cell.links().forEach(linked => {
       if (typeof distances.distance(linked) !== 'number') {
-        distances.distance(linked, distances.distance(cell) + 1);
+        const cellDistance = distances.distance(cell);
+        if (cellDistance === null) throw new Error('Unexpected null distance');
+        distances.setDistance(linked, cellDistance + 1);
         newFrontier.push(linked);
       }
     });
@@ -13,6 +22,9 @@ function expand (distances, frontier) {
   return newFrontier;
 }
 
+/**
+ * @param {Cell} cell
+ */
 export function dijkstra (cell) {
   const distances = new Distances(cell);
   let frontier = [cell];

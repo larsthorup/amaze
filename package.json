@@ -14,22 +14,28 @@
   "description": "Maze generation in isomorphic JavaScript",
   "devDependencies": {
     "@esm-bundle/chai": "^4.3.4-fix.0",
-    "chrome-launcher": "^1.1.0",
+    "@types/http-server": "^0.12.4",
+    "@types/mocha": "^10.0.6",
+    "@types/sinon": "^17.0.2",
+    "@types/sinon-chai": "^3.2.12",
     "c8": "^8.0.1",
+    "chrome-launcher": "^1.1.0",
     "http-server": "^14.1.1",
     "mocha": "^10.2.0",
     "puppeteer-core": "^21.6.0",
     "semistandard": "^17.0.0",
     "sinon": "^17.0.1",
-    "sinon-chai-es": "^3.7.0"
+    "sinon-chai-es": "^3.7.0",
+    "typescript": "^5.3.3"
   },
   "scripts": {
-    "lint": "semistandard --verbose",
+    "semistandard": "semistandard --verbose",
     "mocha": "mocha",
     "serve": "http-server . -p 8080 --mimetypes dev/mime.types -o /src/index.html",
     "start": "node src/index",
     "test:node": "c8 mocha",
     "test:browser": "node dev/puppeteer-runner.js",
-    "test": "npm run lint && npm run test:node && npm run test:browser"
+    "test": "npm run tsc && npm run semistandard && npm run test:node && npm run test:browser",
+    "tsc": "tsc"
   }
 }

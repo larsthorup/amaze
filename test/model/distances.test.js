@@ -1,4 +1,5 @@
 /* eslint-env mocha */
+import { expect } from '@esm-bundle/chai';
 import { Cell } from '../../src/model/cell.js';
 import { Distances } from '../../src/model/distances.js';
 
@@ -7,7 +8,7 @@ describe('model/distances', function () {
     it('should set the distance of root to zero', function () {
       const root = new Cell(1, 1);
       const distances = new Distances(root);
-      distances.distance(root).should.equal(0);
+      expect(distances.distance(root)).to.equal(0);
     });
   });
 
@@ -16,10 +17,10 @@ describe('model/distances', function () {
       const root = new Cell(0, 0);
       const distances = new Distances(root);
       const cell1 = new Cell(1, 1);
-      distances.distance(cell1, 1);
+      distances.setDistance(cell1, 1);
       const cell2 = new Cell(2, 2);
-      distances.distance(cell2, 2);
-      distances.max().cell.should.equal(cell2);
+      distances.setDistance(cell2, 2);
+      expect(distances.max().cell).to.equal(cell2);
     });
   });
 });

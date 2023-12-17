@@ -1,4 +1,5 @@
 /* eslint-env mocha */
+import { expect } from '@esm-bundle/chai';
 import sinon from 'sinon';
 
 import _ from '../../src/lib/util.js';
@@ -22,7 +23,7 @@ describe('main/cli', function () {
       algorithm: 'binaryTree',
       view: 'ascii'
     });
-    console.log.should.have.been.calledWith([
+    expect(console.log).to.have.been.calledWith([
       '+---+---+',
       '| x     |',
       '+---+   +',

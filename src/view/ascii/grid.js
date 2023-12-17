@@ -1,4 +1,12 @@
+/** @typedef {import('../../model/grid.js').Grid} Grid */
+
+/** @typedef {{model: Grid}} AsciiGridOptions */
+
+/**
+ * @param {AsciiGridOptions} options
+ */
 export function AsciiGridView (options) {
+  /** @type {Grid} */
   this._grid = options.model;
 }
 

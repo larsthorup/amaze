@@ -1,9 +1,19 @@
 import _ from '../../lib/util.js';
 
+/** @typedef {import('../../model/cell.js').Cell} Cell */
+/** @typedef {import('../../model/grid.js').Grid} Grid */
+
+/**
+ * @param {Cell} cell
+ */
 function hasNoLinks (cell) {
   return cell.links().length === 0;
 }
 
+/**
+ * @param {Grid} grid
+ * @param {Cell} cell
+ */
 function backtrack (grid, cell) {
   do {
     const neighbors = cell.neighbors().filter(hasNoLinks);
@@ -17,6 +27,9 @@ function backtrack (grid, cell) {
   } while (true);
 }
 
+/**
+ * @param {Grid} grid
+ */
 export function recursiveBacktracker (grid) {
   backtrack(grid, grid.sample());
 }
